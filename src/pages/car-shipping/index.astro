@@ -155,7 +155,7 @@ const continents = Object.entries(continentCountries).map(([name, countries]) =>
   <section class="pt-3 pb-16 lg:pb-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 font-[family-name:var(--font-heading)] mb-3">Countries We Ship To</h2>
-      <p class="text-gray-500 leading-relaxed max-w-3xl mb-8">Every country we ship to and the ports we deliver to there (or the hub port we route through), by continent. Choose a country to see its sailings.</p>
+      <p class="text-gray-500 leading-relaxed max-w-3xl mb-8">Every country we ship to and the ports we deliver to there (or the hub port we route through), by continent. Choose a country to see its sailings, or read our <a href="/car-shipping/ports" class="text-[var(--color-primary)] font-semibold hover:underline">destination port guides</a>.</p>
       <div class="space-y-8">
         {continents.filter(c => c.countries.length > 0).map(c => (
           <div>

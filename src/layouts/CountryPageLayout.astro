@@ -6,6 +6,7 @@
 // default slot; see src/pages/car-shipping/australia.astro for a full example.
 import Layout from './Layout.astro';
 import CountryExportServices from '../components/CountryExportServices.astro';
+import { portLinkFor } from '../data/ports';
 
 interface QuickFact {
   label: string;
@@ -220,12 +221,12 @@ const faqSchema = faqs.length
             <div class="bg-gray-50 rounded-2xl p-6">
               <h3 class="font-semibold text-gray-900 mb-4 font-[family-name:var(--font-heading)]">Destination Ports</h3>
               <ul class="space-y-2">
-                {destinationPorts.map((port) => (
+                {destinationPorts.map((port) => { const href = portLinkFor(port, countryName); return (
                   <li class="flex items-center gap-2 text-sm text-gray-600">
                     <svg class="w-4 h-4 text-[var(--color-primary)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                    {port}
+                    {href ? <a href={href} class="hover:text-[var(--color-primary)] hover:underline">{port}</a> : port}
                   </li>
-                ))}
+                ); })}
               </ul>
             </div>
           )}

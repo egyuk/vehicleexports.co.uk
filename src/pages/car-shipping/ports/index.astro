@@ -1,0 +1,59 @@
+---
+// Index of every destination port guide, grouped the same way as the
+// Countries menu. Only ports with a guide in src/data/ports.json appear.
+import Layout from '../../../layouts/Layout.astro';
+import { ports, portHref } from '../../../data/ports';
+import { continentCountries } from '../../../data/destinations';
+
+const groups = Object.entries(continentCountries)
+  .map(([continent, countries]) => ({
+    continent,
+    countries: countries
+      .map(c => ({ ...c, guides: ports.filter(p => p.country === c.name) }))
+      .filter(c => c.guides.length > 0),
+  }))
+  .filter(g => g.countries.length > 0);
+---
+
+<Layout
+  title="Destination Port Guides | UK Car Shipping"
+  description={`Guides to the ${ports.length} ports we ship cars to from the UK: where each port is, how vehicles are handled there and upcoming sailings.`}
+>
+  <section class="bg-gradient-to-br from-[var(--color-dark)] to-gray-900 py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="breadcrumb flex items-center gap-2 text-sm text-gray-400 mb-4">
+        <a href="/" class="hover:text-[var(--color-primary)] transition-colors">Home</a>
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href="/car-shipping" class="hover:text-[var(--color-primary)] transition-colors">All Destinations</a>
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <span class="text-white">Ports</span>
+      </nav>
+      <h1 class="text-3xl lg:text-5xl font-bold text-white font-[family-name:var(--font-heading)] max-w-3xl">Destination Port Guides</h1>
+      <p class="text-gray-400 mt-4 text-lg max-w-3xl">Every port we ship vehicles to from the UK, with where it is, how cars are handled there and the next sailings.</p>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      {groups.map(g => (
+        <div>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3 pb-2 border-b border-gray-100">{g.continent}</h2>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {g.countries.map(c => (
+              <div class="bg-gray-50 border border-gray-100 rounded-lg p-3 text-sm leading-relaxed">
+                <a href={c.href} class="font-semibold text-gray-900 hover:text-[var(--color-primary)]">{c.name}</a>
+                <span class="text-gray-400"> – </span>
+                {c.guides.map((p, i) => (
+                  <>
+                    {i > 0 && ', '}
+                    <a href={portHref(p)} class="text-gray-700 hover:text-[var(--color-primary)] hover:underline">{p.name}</a>
+                  </>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>
