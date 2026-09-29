@@ -68,7 +68,7 @@ quoting a container transit as a RoRo one sells the customer the wrong service.
 Liverpool to North America service is the one in the data: their G4 ships take
 containers and rolling cargo on the same sailing, so a car can go either way on
 the same departure. It is badged on the site as a benefit rather than a caveat,
-and it is currently **the only container option anywhere in the schedule**.
+and it is the only service in the data where one departure offers both modes.
 
 `unknown` is not a soft default, it is an honest answer. The aggregator sources
 republish other operators' sailings, and after the merge any row still without a
@@ -82,8 +82,15 @@ turned out to be container services, while the page presented their transit as
 if it were RoRo. The site now badges anything that is not plain RoRo, on both
 the country pages and the full schedule.
 
-All 18 existing sources are RoRo or ro-pax operators. There is currently **no
-container line in the data at all** — see the CMA CGM note in SITE-BACKLOG.md.
+Two of the twenty sources are pure container lines: MSC (`optional`, behind
+Akamai) and Ellerman City Liners (a UK shortsea feeder). Every other source is a
+RoRo or ro-pax operator, and ACL is the one ConRo. The CMA CGM note in
+SITE-BACKLOG.md records why CMA CGM itself is not viable. The obvious next
+container source is ONE (Ocean Network Express): `ecomm.one-line.com/api/v1/schedule/port`
+and `.../schedule/vessel/port-list` answered plain anonymous fetch in September
+2026 with dated UK departures and full rotations, the same port-then-voyage shape
+as the MSC, NYK and MOL modules. Its point-to-point search is Turnstile-gated
+and must not be used.
 
 ## Data quality rules
 
