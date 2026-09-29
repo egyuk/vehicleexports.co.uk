@@ -3,9 +3,10 @@
 //
 // The port facts live in ports.json. They were researched from port authority,
 // terminal operator and trade press sources in September 2026, and each entry
-// keeps the URLs it was taken from in `sources` (printed on its page). Like the
-// country pages, these stop short of destination import rules: location,
-// facilities, operators, vehicle handling and hinterland only.
+// keeps the URLs it was taken from in `sources`, for checking (they are not
+// shown on the page). Like the country pages, these stop short of destination
+// import rules: location, facilities, operators, vehicle handling and
+// hinterland only.
 //
 // Country pages get their port names from the weekly sailing schedule, which
 // spells the same port several ways ("Port Kelang", "Lome", "Jakarta/T.Priok"),
