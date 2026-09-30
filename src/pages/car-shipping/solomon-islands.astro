@@ -1,0 +1,149 @@
+---
+// Car shipping from the UK to Solomon Islands. Generated on 2026-09-30 in the
+// pattern of fiji.astro, and safe to edit by hand.
+//
+// Solomon Islands takes no direct UK sailing, so every derived fact on this page
+// resolves through the hubPorts entry in destinations.ts (Brisbane, Australia; Singapore, Singapore).
+// Ports, load ports, carriers and transit come from the schedule at BUILD time
+// and prices from the rate table, so both follow their own refresh. The routing
+// and market notes below were researched in September 2026.
+//
+// UK-SIDE SCOPE: sourcing, tax-free supply, UK customs and documentation, and
+// getting the car onto the ship. Destination duty, taxes and registration are
+// the importer's responsibility and belong on /import-uk-cars/.
+import CountryPageLayout from '../../layouts/CountryPageLayout.astro';
+import SailingSchedule from '../../components/SailingSchedule.astro';
+import CountryCosts from '../../components/CountryCosts.astro';
+import CountryBookingTerms from '../../components/CountryBookingTerms.astro';
+import CountryServices from '../../components/CountryServices.astro';
+import CountrySourcing from '../../components/CountrySourcing.astro';
+import CountryTaxFree from '../../components/CountryTaxFree.astro';
+import { fromPriceFor } from '../../data/shipping-prices';
+import { approximateRatesFor } from '../../data/shipping-rates';
+import { scheduleFactsFor, fromPortsLabel, listOf } from '../../data/schedule-facts';
+import { portFor, portHref } from '../../data/ports';
+
+const countryName = "Solomon Islands";
+const popularBrands: string[] = [];
+const fromPrice = fromPriceFor(countryName);
+const approx = approximateRatesFor(countryName);
+const facts = scheduleFactsFor(countryName);
+const destinationPorts = facts.ports.length ? facts.ports : ["Brisbane","Singapore"];
+
+// Where the car finally lands, with a link to each port guide that exists.
+const arrivalPorts = ["Honiara"];
+const arrivalLinks = arrivalPorts.map(name => {
+  const p = portFor(name, countryName);
+  return { name, href: p ? portHref(p) : undefined };
+});
+
+const quickFacts = [
+  facts.transit
+    ? { label: 'Shipping Time', value: facts.transit, sub: fromPortsLabel(facts.loadPorts) }
+    : { label: 'Shipping Time', value: 'On enquiry', sub: 'Routing confirmed at booking' },
+  {
+    label: arrivalPorts.length > 1 ? 'Arrival Ports' : 'Arrival Port',
+    value: arrivalPorts.join(', '),
+    sub: "Via Brisbane or Singapore",
+  },
+  {
+    label: 'Shipping From',
+    value: fromPrice ?? 'Call for price',
+    sub: fromPrice ? 'Approximate, per vehicle' : 'Quoted per booking',
+  },
+  facts.carriers.length
+    ? {
+        label: facts.carriers.length > 1 ? 'Shipping Lines' : 'Shipping Line',
+        value: facts.carriers[0],
+        sub: facts.carriers.length > 1
+          ? `and ${facts.carriers.length - 1} other line${facts.carriers.length > 2 ? 's' : ''}`
+          : 'RoRo and container',
+      }
+    : { label: 'Shipping Options', value: 'RoRo & container', sub: 'Whichever suits the vehicle' },
+];
+
+const tocLinks = [
+  { href: '#costs', label: 'Costs & pricing' },
+  ...(facts.count ? [{ href: '#sailings', label: 'Sailing schedule' }] : []),
+  { href: '#about', label: "Shipping to Solomon Islands" },
+  { href: '#why-ship', label: 'Our Other Services' },
+  { href: '#vat-qualifying', label: 'Tax-Free Vehicle Supply & VAT Reclaims' },
+  { href: '#faq', label: 'FAQs' },
+];
+
+const faqs = [
+  {
+    q: `How much does it cost to ship a car from the UK to ${countryName}?`,
+    a: `${approx?.roro ? `RoRo shipping starts from around ${approx.roro} per vehicle${approx?.c20 ? `, and a 20ft container from about ${approx.c20}` : ''}` : approx?.c20 ? `A 20ft container starts from around ${approx.c20} per vehicle` : 'Rates for this route are quoted per booking rather than from a rate card'}. ${approx ? 'Those are indicative rates from our published rate table and move with the market, so call us for the latest. ' : ''}A full export quote covers the UK-side work as well: customs clearance, port handling, DVLA paperwork and export documentation.`,
+  },
+  {
+    q: `How long does shipping from the UK to ${countryName} take?`,
+    a: `${facts.transit ? `Current carrier schedules show ${facts.transit} to Brisbane or Singapore${facts.loadPorts.length ? `, sailing from ${listOf(facts.loadPorts)}` : ''}` : 'Transit depends on the routing and is confirmed at booking'}. Allow extra for the onward leg to ${countryName} and for collection and UK export clearance either side. The live sailing schedule on this page shows the actual dates.`,
+  },
+  {
+    q: `Which UK ports do sailings for ${countryName} depart from?`,
+    a: `${facts.loadPorts.length ? listOf(facts.loadPorts) : 'The departure port follows the sailing we book'}${facts.carriers.length ? `, with ${listOf(facts.carriers)}` : ''}. We collect vehicles from any UK address and deliver them to the departure port.`,
+  },
+  {
+    q: `Which port does my car arrive at in ${countryName}?`,
+    a: "Honiara. No vessel sails there direct from the UK, so the deep-sea leg runs to Brisbane or Singapore and the vehicle is transhipped onto a feeder service from there. The rates and dates on this page cover the deep-sea leg, and the onward sailing is arranged at booking.",
+  },
+  {
+    q: `Can I pack personal items in the car?`,
+    a: `Not with RoRo — carriers require the vehicle to be empty. If you want to ship personal effects or multiple vehicles together, choose private container shipping instead.`,
+  },
+  {
+    q: `Who handles import duty and registration when the car arrives in ${countryName}?`,
+    a: `That side is the importer's responsibility and the rules vary by country. Our price covers everything up to and including the sailing from the UK; destination import fees are not included. We can introduce you to a customs agent at the arrival port.`,
+  },
+];
+
+const marketNote = "Honiara, on the Point Cruz peninsula on the north coast of Guadalcanal, is the country's main port of entry; cargo for the other islands is reshipped on domestic ferries and small boats from the adjacent Domestic Wharf. Cars were the seventh-largest import by value in 2024, with Japan the leading source (US$6.1 million of US$10 million), followed by Thailand. Traffic drives on the left.";
+const routing = "From Brisbane, Neptune Pacific's WPAC service reaches Honiara via Lae in about 12 days (September 2026 schedule), and Swire Shipping's fortnightly Papua New Guinea Service calls Honiara after Motukea and Lae, about 14 days out (July 2024 schedule). From Singapore, Swire's weekly Pacific Weekly Express serves Honiara via Papua New Guinea, New Caledonia and Fiji on alternate calls (May 2026 schedule).";
+---
+
+<CountryPageLayout
+  title={`Car Shipping UK to ${countryName}${fromPrice ? ` | From ${fromPrice}` : ''}`}
+  description={`Ship a car from the UK to ${countryName} via Brisbane or Singapore. ${fromPrice ? `From ${fromPrice}. ` : ''}${facts.transit ? `${facts.transit} sea leg. ` : ''}Costs, routing and live sailing dates.`.slice(0, 158)}
+  countryName={countryName}
+  quickFacts={quickFacts}
+  tocLinks={tocLinks}
+  popularBrands={popularBrands}
+  destinationPorts={destinationPorts}
+  fromPrice={fromPrice}
+  faqs={faqs}
+>
+  <CountryCosts countryName={countryName} destinationPorts={destinationPorts} />
+
+  <SailingSchedule
+    country="Australia"
+    id="sailings"
+    standalone={false}
+    heading="Sailings to Australia"
+    intro="Vehicles for Solomon Islands travel on these sailings as far as Australia, then onward. Dates are carrier estimates and must be reconfirmed before booking."
+  />
+
+  <div id="about">
+    <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 font-[family-name:var(--font-heading)] mb-4">Shipping to {countryName}</h2>
+    <p class="text-gray-600 leading-relaxed mb-4">{marketNote}</p>
+    <p class="text-gray-600 leading-relaxed mb-4">{routing}</p>
+    <p class="text-gray-600 leading-relaxed mb-4">
+      Port guide{arrivalLinks.length > 1 ? 's' : ''}:{' '}
+      {arrivalLinks.map((p, i) => <>{i > 0 && ', '}{p.href ? <a href={p.href} class="text-[var(--color-primary)] font-semibold hover:underline">{p.name}</a> : p.name}</>)}
+    </p>
+    <p class="text-gray-600 leading-relaxed">
+      We handle the whole UK side for you: sourcing the vehicle, tax-free and VAT-qualifying supply where
+      it applies, collection from any UK address, UK customs clearance and export documentation, and
+      loading onto the ship.{facts.loadPorts.length ? ` Sailings leave from ${listOf(facts.loadPorts)}.` : ''} The onward leg beyond Brisbane or Singapore and
+      clearance into {countryName} are arranged by your agent.
+    </p>
+  </div>
+
+  <CountryBookingTerms />
+
+  <CountryServices />
+
+  <CountrySourcing countryName={countryName} />
+
+  <CountryTaxFree countryName={countryName} />
+</CountryPageLayout>

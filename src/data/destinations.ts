@@ -136,6 +136,25 @@ const countryPages: Record<string, string> = {
   Seychelles: '/car-shipping/seychelles',
   'St Helena': '/car-shipping/st-helena',
   Zambia: '/car-shipping/zambia',
+
+  // Added 2026-09-30: Pacific destinations from a forwarder's coverage list
+  // (South Pacific Agencies) that this site did not cover. None takes a direct
+  // UK sailing, so each resolves through a hubPorts entry like the eleven above.
+  Guam: '/car-shipping/guam',
+  'Northern Mariana Islands': '/car-shipping/northern-mariana-islands',
+  Micronesia: '/car-shipping/micronesia',
+  'Marshall Islands': '/car-shipping/marshall-islands',
+  Kiribati: '/car-shipping/kiribati',
+  'Papua New Guinea': '/car-shipping/papua-new-guinea',
+  'Solomon Islands': '/car-shipping/solomon-islands',
+  Vanuatu: '/car-shipping/vanuatu',
+  'Timor-Leste': '/car-shipping/timor-leste',
+  Samoa: '/car-shipping/samoa',
+  'American Samoa': '/car-shipping/american-samoa',
+  Tonga: '/car-shipping/tonga',
+  'Cook Islands': '/car-shipping/cook-islands',
+  Tuvalu: '/car-shipping/tuvalu',
+  'Wallis and Futuna': '/car-shipping/wallis-and-futuna',
 };
 
 // Where the schedule data names a country differently from the menu. Consulted
@@ -170,6 +189,23 @@ export const hubPorts: Record<string, string[]> = {
   Seychelles: ['Mauritius, Port Louis', 'Kenya, Mombasa'],
   'St Helena': ['South Africa, Cape Town'],
   Zambia: ['Tanzania, Dar es Salaam', 'South Africa, Durban'],
+
+  // The Pacific islands added 2026-09-30, via the hub their feeder services run from.
+  Guam: ['USA, Long Beach', 'South Korea, Busan'],
+  'Northern Mariana Islands': ['USA, Long Beach', 'South Korea, Busan'],
+  Micronesia: ['South Korea, Busan', 'USA, Long Beach'],
+  'Marshall Islands': ['South Korea, Busan', 'USA, Long Beach'],
+  Kiribati: ['South Korea, Busan', 'New Zealand, Auckland'],
+  'Papua New Guinea': ['Australia, Brisbane', 'Singapore, Singapore'],
+  'Solomon Islands': ['Australia, Brisbane', 'Singapore, Singapore'],
+  Vanuatu: ['Australia, Brisbane', 'New Zealand, Auckland'],
+  'Timor-Leste': ['Singapore, Singapore'],
+  Samoa: ['New Zealand, Auckland'],
+  'American Samoa': ['New Zealand, Auckland', 'USA, Long Beach'],
+  Tonga: ['New Zealand, Auckland'],
+  'Cook Islands': ['New Zealand, Auckland'],
+  Tuvalu: ['New Zealand, Auckland', 'Australia, Brisbane'],
+  'Wallis and Futuna': ['New Zealand, Auckland', 'New Caledonia, Noumea'],
 };
 const via = (name: string) => 'via ' + hubPorts[name].map(h => h.split(', ')[1]).join(' or ');
 
@@ -177,6 +213,23 @@ const via = (name: string) => 'via ' + hubPorts[name].map(h => h.split(', ')[1])
 // left out. The landlocked countries show the hub port they are reached via
 // (Zimbabwe's entry keeps its inherited delivery points).
 const countryPorts: Record<string, string[]> = {
+  // The Pacific islands added 2026-09-30 show the port the car finally lands
+  // at, since the hub is already named on each page.
+  Guam: ['Apra Harbor'],
+  'Northern Mariana Islands': ['Saipan'],
+  Micronesia: ['Pohnpei', 'Chuuk', 'Yap', 'Kosrae'],
+  'Marshall Islands': ['Majuro', 'Ebeye'],
+  Kiribati: ['Betio'],
+  'Papua New Guinea': ['Lae', 'Port Moresby'],
+  'Solomon Islands': ['Honiara'],
+  Vanuatu: ['Port Vila', 'Luganville'],
+  'Timor-Leste': ['Tibar Bay'],
+  Samoa: ['Apia'],
+  'American Samoa': ['Pago Pago'],
+  Tonga: ["Nuku'alofa"],
+  'Cook Islands': ['Avatiu'],
+  Tuvalu: ['Funafuti'],
+  'Wallis and Futuna': ['Mata-Utu'],
   Bermuda: ['Hamilton'],
   Brunei: ['Muara'],
   Eswatini: ['Matsapa', 'Manzini'],
@@ -296,7 +349,7 @@ const continentNames: Record<string, string[]> = {
   Asia: [
     'Bangladesh', 'Brunei', 'China', 'Hong Kong', 'India', 'Indonesia', 'Japan', 'Macau',
     'Malaysia', 'Maldives', 'Pakistan', 'Singapore', 'South Korea', 'Sri Lanka', 'Taiwan',
-    'Thailand',
+    'Thailand', 'Timor-Leste',
   ],
   Caribbean: [
     'Antigua', 'Aruba', 'Bahamas', 'Barbados', 'Bermuda', 'Cayman Islands', 'Curaçao', 'Dominica',
@@ -306,7 +359,17 @@ const continentNames: Record<string, string[]> = {
   Europe: ['Cyprus', 'Greece', 'Guernsey', 'Ireland', 'Italy', 'Jersey', 'Malta', 'Spain', 'Sweden'],
   'Middle East': ['Jordan', 'Oman', 'Saudi Arabia', 'Turkey'],
   'North America': ['Canada', 'Mexico', 'USA'],
-  Oceania: ['Australia', 'Fiji', 'French Polynesia', 'New Caledonia', 'New Zealand'],
+  // Split in two when the Pacific islands arrived (2026-09-30): one Oceania
+  // group of 19 made the desktop panel's tallest column 28 rows, against 22
+  // before; two groups pack to 26.
+  Oceania: [
+    'Australia', 'Fiji', 'French Polynesia', 'New Caledonia', 'New Zealand',
+    'Papua New Guinea', 'Solomon Islands', 'Vanuatu',
+  ],
+  'Pacific Islands': [
+    'American Samoa', 'Cook Islands', 'Guam', 'Kiribati', 'Marshall Islands', 'Micronesia',
+    'Northern Mariana Islands', 'Samoa', 'Tonga', 'Tuvalu', 'Wallis and Futuna',
+  ],
   'South & Central America': [
     'Argentina', 'Brazil', 'Chile', 'Colombia', 'Ecuador', 'French Guiana', 'Guyana', 'Panama',
     'Peru', 'Suriname', 'Uruguay',

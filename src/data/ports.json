@@ -6795,5 +6795,935 @@
       "https://www.togo-port.net/installation-pal/quais-port-autonome-lome/",
       "https://www.togo-port.net/installation-pal/espaces-de-stockage-port-autonome-lome/"
     ]
+  },
+  {
+    "slug": "apra-harbor",
+    "name": "Apra Harbor",
+    "fullName": "Jose D. Leon Guerrero Commercial Port (Port of Guam)",
+    "country": "Guam",
+    "aliases": [
+      "Port of Guam",
+      "Guam",
+      "Apra",
+      "Jose D. Leon Guerrero Commercial Port",
+      "Cabras Island"
+    ],
+    "locode": "GUGUM",
+    "location": "On Cabras Island in Piti, in the inner reaches of Apra Harbor on the west coast of Guam.",
+    "summary": "Guam's only commercial deepwater port, run by the Port Authority of Guam, an autonomous public corporation set up in 1975, and renamed in 2002 after its first commercial port manager. It handles over 90 per cent of the island's imports, and in FY2020 handled 85,143 TEU and 1,112,106 tonnes of cargo. It also serves ships trading to the Northern Marianas and the Micronesian islands.",
+    "vehicleHandling": "The sources describe no dedicated RoRo terminal: cars are handled across the port's 2,650 ft of docking space for container, break-bulk, fishing and passenger vessels and its 26.5 acre container yard. Equipment includes two rail-mounted gantry cranes of 40 short tons, two rubber-tyred gantry cranes and a 104 tonne mobile harbour crane. Matson, the main carrier of cars from the US West Coast, says it ships hundreds of cars a month to and from Guam.",
+    "hinterland": "The whole island of Guam. Cargo for Saipan and the Federated States of Micronesia is also transhipped here onto connecting ships.",
+    "facts": [
+      {
+        "label": "Port authority",
+        "value": "Port Authority of Guam (established 1975)"
+      },
+      {
+        "label": "Container traffic (FY2020)",
+        "value": "85,143 TEU"
+      },
+      {
+        "label": "Total cargo (FY2020)",
+        "value": "1,112,106 tonnes"
+      },
+      {
+        "label": "Docking space",
+        "value": "2,650 ft"
+      },
+      {
+        "label": "Container yard",
+        "value": "26.5 acres"
+      },
+      {
+        "label": "Share of Guam's imports",
+        "value": "Over 90 per cent"
+      }
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Port_of_Guam",
+      "https://www.guampedia.com/port-of-guam/",
+      "https://www.portofguam.com/about-us/about-pag",
+      "https://www.matson.com/ocean-services/guam-micronesia/ship-your-car-to-guam.html",
+      "https://www.routescanner.com/locodes/GU/GUGUM"
+    ]
+  },
+  {
+    "slug": "saipan",
+    "name": "Saipan",
+    "fullName": "Port of Saipan",
+    "country": "Northern Mariana Islands",
+    "aliases": [
+      "Tanapag",
+      "Tanapag Harbor",
+      "Saipan Harbor",
+      "Charlie Dock"
+    ],
+    "locode": "MPSPN",
+    "location": "On Tanapag Harbor on the west side of Saipan, the main island of the Northern Mariana Islands.",
+    "summary": "The largest port in the Northern Mariana Islands, managed by the Commonwealth Ports Authority. It has 2,600 ft of berthing space and a 22 acre container yard, and its channel and berths have been deepened to a uniform 40 ft for medium and deep draught ships. Carriers listed as serving it include Matson, Swire Shipping, PIL and Kyowa Shipping.",
+    "vehicleHandling": "No dedicated RoRo facility is described, so vehicles are worked across the general commercial dock with containers. Terminal and stevedoring work is done by Saipan Stevedore Company, founded in 1964, whose equipment includes forklifts of up to 40 tonnes, a 50 tonne crane, and tractors and chassis for hauling containers.",
+    "hinterland": null,
+    "facts": [
+      {
+        "label": "Port authority",
+        "value": "Commonwealth Ports Authority"
+      },
+      {
+        "label": "Berthing space",
+        "value": "2,600 ft"
+      },
+      {
+        "label": "Container yard",
+        "value": "22 acres"
+      },
+      {
+        "label": "Channel and berth depth",
+        "value": "40 ft"
+      },
+      {
+        "label": "Stevedore",
+        "value": "Saipan Stevedore Company (since 1964)"
+      }
+    ],
+    "sources": [
+      "https://cnmiports.com/spnprt.asp",
+      "https://saisteve.com/about-us/",
+      "https://atosscom.com/commonwealth-ports-authority-cpa",
+      "https://www.routescanner.com/locodes/MP/MPSPN",
+      "https://www.kyowa-line.co.jp/en/pdf/schedule/Ex_China_Central.pdf"
+    ]
+  },
+  {
+    "slug": "pohnpei",
+    "name": "Pohnpei",
+    "fullName": "Dekehtik Port, Pohnpei",
+    "country": "Micronesia",
+    "aliases": [
+      "Dekehtik",
+      "Takatik",
+      "Kolonia",
+      "Pohnpei Harbour",
+      "Ponape"
+    ],
+    "locode": "FMPNI",
+    "location": "On Dekehtik, also called Takatik Island, near Kolonia on Pohnpei, the state that holds the national capital, Palikir.",
+    "summary": "Pohnpei's only commercial seaport, owned and operated by the Pohnpei Port Authority. In 2016 it handled around 2,000 inbound TEU, 70,000 tonnes of breakbulk and 25,000 tonnes of fuel, with little outbound traffic. The main wharf serves international cargo ships, tankers and purse seiners, with a domestic wharf alongside and the separate Takatik Fishing Wharf to the south.",
+    "vehicleHandling": "No dedicated RoRo berth is described: vehicles cross the main international cargo wharf with containers and breakbulk. The port authority leases cargo handling to a private operator, which works with top loaders and forklifts, and a 7,500 m2 outside storage area is used for general cargo and vehicles.",
+    "hinterland": "Pohnpei island and the outer islands of Pohnpei State, which are reached by domestic ships from the adjacent wharf.",
+    "facts": [
+      {
+        "label": "Port authority",
+        "value": "Pohnpei Port Authority"
+      },
+      {
+        "label": "Inbound containers (2016)",
+        "value": "About 2,000 TEU"
+      },
+      {
+        "label": "Breakbulk (2016)",
+        "value": "About 70,000 tonnes"
+      },
+      {
+        "label": "Vehicle and general cargo yard",
+        "value": "7,500 m2"
+      },
+      {
+        "label": "Container ship calls (2024)",
+        "value": "3 to 4 a month"
+      }
+    ],
+    "sources": [
+      "https://documents1.worldbank.org/curated/en/596691553250751468/pdf/Project-Information-Document-Integrated-Safeguards-Data-Sheet-Federated-States-of-Micronesia-Maritime-Investment-Project-P163922.pdf",
+      "https://www.marineinsight.com/know-more/ports-in-micronesia/",
+      "https://www.routescanner.com/locodes/FM/FMPNI"
+    ]
+  },
+  {
+    "slug": "chuuk",
+    "name": "Chuuk",
+    "fullName": "Weno Port, Chuuk",
+    "country": "Micronesia",
+    "aliases": [
+      "Weno",
+      "Moen",
+      "Truk",
+      "Chuuk Lagoon"
+    ],
+    "locode": "FMTKK",
+    "location": "On Weno, formerly Moen, Island inside Chuuk Lagoon.",
+    "summary": "Chuuk's international port and the hub for domestic shipping to islands inside and outside the lagoon. In 2014, 72 ships called and container throughput was 1,155 TEU, and in 2019 the World Bank put current traffic at about 700 full import and 700 empty export containers a year. The port is overseen by the Chuuk State Department of Transportation, Communication and Infrastructure.",
+    "vehicleHandling": "Vehicles arrive with container freight across two general docks of about 190 m and 185 m; no RoRo facility is described. There are no shore container cranes, so ships discharge with their own gear, at 6 to 10 containers an hour. Terminal services and stevedoring are contracted to the private company Transco.",
+    "hinterland": "Weno and the other islands of Chuuk Lagoon and the outer islands, served by small domestic cargo and passenger boats from the port.",
+    "facts": [
+      {
+        "label": "Port oversight",
+        "value": "Chuuk State Department of Transportation, Communication and Infrastructure"
+      },
+      {
+        "label": "Terminal operator",
+        "value": "Transco"
+      },
+      {
+        "label": "Docks",
+        "value": "Two, about 190 m and 185 m"
+      },
+      {
+        "label": "Vessel calls (2014)",
+        "value": "72"
+      },
+      {
+        "label": "Container throughput (2014)",
+        "value": "1,155 TEU"
+      }
+    ],
+    "sources": [
+      "https://documents1.worldbank.org/curated/en/596691553250751468/pdf/Project-Information-Document-Integrated-Safeguards-Data-Sheet-Federated-States-of-Micronesia-Maritime-Investment-Project-P163922.pdf",
+      "https://www.marineinsight.com/know-more/ports-in-micronesia/",
+      "https://www.routescanner.com/locodes/FM/FMTKK"
+    ]
+  },
+  {
+    "slug": "yap",
+    "name": "Yap",
+    "fullName": "Tomil Port, Colonia, Yap",
+    "country": "Micronesia",
+    "aliases": [
+      "Colonia",
+      "Tomil",
+      "Tomil Harbour",
+      "Yap Colonia"
+    ],
+    "locode": "FMYAP",
+    "location": "In Tomil Harbour at Colonia, the capital of Yap State, on Yap Island.",
+    "summary": "Tomil Port serves international cargo ships, fuel tankers and the occasional longliner. In 2019 it was served by three multi-purpose shipping lines about every two weeks, with 15 to 30 full inbound TEU per call. The harbour is 5 to 15 m deep and the entrance channel 7 to 10 m.",
+    "vehicleHandling": "A 264 m main dock handles international cargo, and a concrete RoRo berth at the eastern end of the port takes ramp vessels. There are no container cranes, so ships use their own gear, and terminal services are provided by a private operator under the Yap State Department of Public Works and Transportation. Container freight and vehicles are the port's main imports.",
+    "hinterland": "Yap's main islands and the state's outer islands, which are reached from the two domestic docks.",
+    "facts": [
+      {
+        "label": "Port oversight",
+        "value": "Yap State Department of Public Works and Transportation"
+      },
+      {
+        "label": "Main dock",
+        "value": "264 m"
+      },
+      {
+        "label": "RoRo berth",
+        "value": "Concrete ramp berth at the eastern end"
+      },
+      {
+        "label": "Harbour depth",
+        "value": "5 to 15 m"
+      },
+      {
+        "label": "Inbound per call (2019)",
+        "value": "15 to 30 full TEU"
+      }
+    ],
+    "sources": [
+      "https://documents1.worldbank.org/curated/en/596691553250751468/pdf/Project-Information-Document-Integrated-Safeguards-Data-Sheet-Federated-States-of-Micronesia-Maritime-Investment-Project-P163922.pdf",
+      "https://www.marineinsight.com/know-more/ports-in-micronesia/",
+      "https://www.routescanner.com/locodes/FM/FMYAP"
+    ]
+  },
+  {
+    "slug": "kosrae",
+    "name": "Kosrae",
+    "fullName": "Okat Port, Kosrae",
+    "country": "Micronesia",
+    "aliases": [
+      "Okat",
+      "Okat Harbor",
+      "Kusaie"
+    ],
+    "locode": "FMKSA",
+    "location": "At Okat on Kosrae, the easternmost state of the federation and a single island with no outer islands.",
+    "summary": "Kosrae's primary commercial port, handling all commercial shipping and fishing. In 2019 it received two to three international multipurpose vessel calls a month, 25 to 30 a year, and handled 600 to 700 TEU a year including empties. Fishing vessels have to stop unloading and leave the berth when a cargo ship arrives.",
+    "vehicleHandling": "Cargo, including any vehicles, crosses a single main dock of about 170 m shared with the fishing fleet; no RoRo berth is described. The Kosrae Port Authority maintains the infrastructure and leases terminal and stevedoring work to a private company, Kosrae Terminal Services and Stevedoring Company.",
+    "hinterland": "The island of Kosrae.",
+    "facts": [
+      {
+        "label": "Port authority",
+        "value": "Kosrae Port Authority"
+      },
+      {
+        "label": "Main dock",
+        "value": "About 170 m"
+      },
+      {
+        "label": "Cargo vessel calls (2019)",
+        "value": "25 to 30 a year"
+      },
+      {
+        "label": "Container throughput (2019)",
+        "value": "600 to 700 TEU a year"
+      },
+      {
+        "label": "Imports per call (2019)",
+        "value": "6 to 10 full containers"
+      }
+    ],
+    "sources": [
+      "https://documents1.worldbank.org/curated/en/596691553250751468/pdf/Project-Information-Document-Integrated-Safeguards-Data-Sheet-Federated-States-of-Micronesia-Maritime-Investment-Project-P163922.pdf",
+      "https://www.marineinsight.com/know-more/ports-in-micronesia/",
+      "https://atosscom.com/kosrae-port-authority",
+      "https://www.routescanner.com/locodes/FM/FMKSA"
+    ]
+  },
+  {
+    "slug": "majuro",
+    "name": "Majuro",
+    "fullName": "Port of Majuro (Delap Dock)",
+    "country": "Marshall Islands",
+    "aliases": [
+      "Delap",
+      "Delap Dock",
+      "Port of Majuro"
+    ],
+    "locode": "MHMAJ",
+    "location": "Delap Dock lies on the southern lagoon shore of Majuro Atoll, about 1 km from Majuro town, and is reached through the Calalin Channel on the atoll's north side.",
+    "summary": "Delap Dock is the main international cargo port of the Marshall Islands, run by the Republic of the Marshall Islands Ports Authority. It handled 78 vessel calls and 1,129 TEU in 2019, with regular sailings from Japan, Korea and Fiji. Carriers listed as serving it include Matson, Swire Shipping, Neptune Pacific Direct Line and PIL.",
+    "vehicleHandling": "There is no RoRo berth: Delap is a general cargo wharf 308 m long, and vehicles are listed among the general containers, reefers and breakbulk that cross it. There are no shore cranes, so geared ships discharge with their own cranes, and the stevedore and terminal operator, Majuro Stevedore and Terminal Company (MSTCO), moves boxes with a reach stacker and forklifts. Containers are delivered to consignees on MSTCO chassis.",
+    "hinterland": "MSTCO delivers containers by prime mover and chassis to consignees across Majuro Atoll, where they are usually left on the trailer for up to 10 days. Outer islands are served by domestic ships from Uliga Dock, also in Majuro.",
+    "facts": [
+      {
+        "label": "Wharf length",
+        "value": "308 m"
+      },
+      {
+        "label": "Maximum draft",
+        "value": "13 m"
+      },
+      {
+        "label": "Vessel calls (2019)",
+        "value": "78"
+      },
+      {
+        "label": "Container traffic (2019)",
+        "value": "1,129 TEU"
+      },
+      {
+        "label": "Yard area",
+        "value": "25,891 m2"
+      },
+      {
+        "label": "Terminal operator",
+        "value": "Majuro Stevedore and Terminal Company (MSTCO)"
+      }
+    ],
+    "sources": [
+      "https://lca.logcluster.org/marshall-islands-211-marshall-islands-rmi-port-delap-dock",
+      "https://lca.logcluster.org/marshall-islands-21-marshall-islands-rmi-port-assessment",
+      "https://www.routescanner.com/locodes/MH/MHMAJ"
+    ]
+  },
+  {
+    "slug": "ebeye",
+    "name": "Ebeye",
+    "fullName": "Port of Ebeye",
+    "country": "Marshall Islands",
+    "aliases": [
+      "Ebeye Dock",
+      "Kwajalein Atoll"
+    ],
+    "locode": null,
+    "location": "Ebeye port sits on the lagoon shore of Ebeye Island in the south of Kwajalein Atoll, 5.5 km from the US military port on Kwajalein Island and 442 km from Majuro.",
+    "summary": "Ebeye is the Marshall Islands' second international port, handling about 700 TEU and two scheduled freight calls a month in 2022. International ships arrive en route from Majuro and Guam, and the dock also serves domestic vessels and the ferry from Kwajalein.",
+    "vehicleHandling": "The main dock is a basic open wharf of 120 m with no cranes or reach stacker, so ships discharge containers with their own gear and they are left at the dock edge; stevedoring is by Kwajalein Atoll Stevedoring Company (KASCO). A separate RoRo landing about 550 m north of the dock, around 35 m wide, takes landing craft and RoRo vessels, mainly for heavy equipment.",
+    "hinterland": "Ebeye is a small island with no covered port storage, so goods stay in containers on the dock until consignees collect them.",
+    "facts": [
+      {
+        "label": "Wharf length",
+        "value": "120 m"
+      },
+      {
+        "label": "Maximum draft",
+        "value": "12 m"
+      },
+      {
+        "label": "Container traffic (2022)",
+        "value": "About 700 TEU"
+      },
+      {
+        "label": "Scheduled calls (2022)",
+        "value": "2 per month"
+      },
+      {
+        "label": "Stevedore",
+        "value": "Kwajalein Atoll Stevedoring Company (KASCO)"
+      }
+    ],
+    "sources": [
+      "https://lca.logcluster.org/marshall-islands-212-marshall-islands-rmi-port-ebeye",
+      "https://lca.logcluster.org/marshall-islands-21-marshall-islands-rmi-port-assessment",
+      "https://www.kyowa-line.co.jp/en/service/route.html"
+    ]
+  },
+  {
+    "slug": "betio",
+    "name": "Betio",
+    "fullName": "Port of Betio",
+    "country": "Kiribati",
+    "aliases": [
+      "Tarawa",
+      "Betio Harbour",
+      "South Tarawa"
+    ],
+    "locode": "KITRW",
+    "location": "Betio port lies on Betio islet at the western end of South Tarawa, inside Tarawa Atoll's reef, about 6 km from the capital's centre.",
+    "summary": "Betio is the main port of entry for Kiribati imports and the transhipment point for domestic ships to the outer islands. It is managed by the Kiribati Ports Authority, and international lines calling include Kyowa Shipping, Swire Shipping and Neptune Pacific Direct Line, generally about two international vessels twice a month.",
+    "vehicleHandling": "There is no RoRo berth: all international cargo uses a single conventional berth of 200 m with 8.5 m draft, and ships discharge containers with their own cranes. The Kiribati Ports Authority carries out stevedoring and moves boxes with a 50 t mobile crane, a 40 t reach stacker and forklifts, so vehicles arrive by container or as general cargo over that berth.",
+    "hinterland": "Betio is linked by road to Bairiki and the rest of South Tarawa, a linear urban strip about 30 km long; outer islands are reached by domestic vessels.",
+    "facts": [
+      {
+        "label": "International berth",
+        "value": "1 x 200 m"
+      },
+      {
+        "label": "Maximum draft at berth",
+        "value": "8.5 m"
+      },
+      {
+        "label": "Container storage",
+        "value": "About 600 x 20 ft and 400 x 40 ft"
+      },
+      {
+        "label": "Operator",
+        "value": "Kiribati Ports Authority"
+      },
+      {
+        "label": "Shipping agents",
+        "value": "Shipping Agency of Kiribati (Swire, Kyowa); One Stop Shipping Agency (NPDL)"
+      }
+    ],
+    "sources": [
+      "https://lca.logcluster.org/211-kiribati-port-betio",
+      "https://wwwcdn.imo.org/localresources/en/OurWork/Environment/Documents/SPC%20Country%20reports/Transport%20cost%20data_08_Kiribati.pdf",
+      "https://asiantransportobservatory.org/documents/430/Kiribati_20260203.pdf",
+      "https://maritimeoptima.com/public/ports/pages/KITRW?country=Kiribati&name=Betio"
+    ]
+  },
+  {
+    "slug": "lae",
+    "name": "Lae",
+    "fullName": "Port of Lae",
+    "country": "Papua New Guinea",
+    "aliases": [
+      "Lae",
+      "Port of Lae",
+      "Lae Tidal Basin",
+      "South Pacific International Container Terminal",
+      "SPICT"
+    ],
+    "locode": "PGLAE",
+    "location": "At the head of the Huon Gulf near the mouth of the Markham River on the north coast of mainland Papua New Guinea, in Morobe Province.",
+    "summary": "Lae is Papua New Guinea's largest and busiest port, handling about half of the country's trade (2026). Its international container operations have been run since early 2018 by ICTSI's South Pacific International Container Terminal (SPICT) at the Lae Tidal Basin, under a 25-year concession granted by PNG Ports Corporation in 2017. Swire Shipping's North Asia Express has called weekly from Hong Kong since August 2025.",
+    "vehicleHandling": "Cars from outside the region arrive in containers through SPICT's terminal at the Lae Tidal Basin, which is worked with mobile harbour cranes and hybrid rubber-tyred gantries (three delivered in 2019). No dedicated RoRo car terminal or regular RoRo car service to Lae was found.",
+    "hinterland": "Lae sits at the start of the Highlands Highway, PNG's main road corridor to the Highlands, and its hinterland of Morobe and five Highlands provinces holds about half the country's population.",
+    "facts": [
+      {
+        "label": "Terminal operator",
+        "value": "ICTSI South Pacific International Container Terminal (SPICT)"
+      },
+      {
+        "label": "Concession",
+        "value": "25 years, granted 2017"
+      },
+      {
+        "label": "Share of national trade",
+        "value": "About 50% (2026)"
+      },
+      {
+        "label": "Weekly direct service",
+        "value": "Swire North Asia Express from Hong Kong (since August 2025)"
+      },
+      {
+        "label": "Brisbane to Lae",
+        "value": "About 5 to 9 days (Neptune Pacific 2026, Swire 2024)"
+      }
+    ],
+    "sources": [
+      "https://www.ictsi.com/our-offering/our-terminals/south-pacific-international-container-terminal-ltd",
+      "https://portcalls.com/ictsi-subsidiary-begins-operating-pngs-biggest-box-terminal/",
+      "https://www.ictsi.com/press-releases/ictsi-upgrades-lae-unit-ahead-schedule",
+      "https://www.businessadvantagepng.com/cash-crop-production-sends-papua-new-guineas-shipping-volumes-soaring/",
+      "https://www.swireshipping.com/information/news-advisories/latest-news/newsservice/swire-shipping-introduces-first-ever-weekly-service-connecting-north-asia-to-papua-new-guinea/",
+      "https://lca.logcluster.org/211-papua-new-guinea-port-lae",
+      "https://en.wikipedia.org/wiki/Lae"
+    ]
+  },
+  {
+    "slug": "port-moresby",
+    "name": "Port Moresby",
+    "fullName": "Motukea International Terminal, Port Moresby",
+    "country": "Papua New Guinea",
+    "aliases": [
+      "Port Moresby",
+      "Motukea",
+      "Motukea Island",
+      "Motukea International Terminal",
+      "MIT"
+    ],
+    "locode": "PGPOM",
+    "location": "On Motukea Island, about 12 km from the centre of Port Moresby, the capital, on the south coast of mainland Papua New Guinea.",
+    "summary": "Motukea International Terminal (MIT) is the only facility in Port Moresby that handles international containers and is operated by ICTSI under a 25-year concession signed with PNG Ports Corporation in 2017. The terminal stands on land reclaimed with about 1.3 million cubic metres of dredged coral rock, clay and sand. Swire Shipping's fortnightly service from Brisbane reaches it in about 5 days (2024).",
+    "vehicleHandling": "ICTSI states that MIT handles international containers as well as RoRo and breakbulk vessels, using shore-based mobile cranes, for ships with drafts under 12.5 m. Cars from outside the region normally arrive in containers; the terminal recorded 31 container moves per hour in September 2026 and was preparing to add rubber-tyred gantries.",
+    "hinterland": "Port Moresby and the National Capital District.",
+    "facts": [
+      {
+        "label": "Terminal operator",
+        "value": "ICTSI (Motukea International Terminal Ltd)"
+      },
+      {
+        "label": "Concession",
+        "value": "25 years, signed 2017"
+      },
+      {
+        "label": "Distance to city centre",
+        "value": "About 12 km"
+      },
+      {
+        "label": "Maximum vessel draft",
+        "value": "Under 12.5 m"
+      },
+      {
+        "label": "Brisbane to Motukea",
+        "value": "About 5 days (Swire, 2024)"
+      }
+    ],
+    "sources": [
+      "https://www.ictsi.com/our-offering/our-terminals/motukea-international-terminal-ltd",
+      "https://portcalls.com/ictsi-enters-papua-guinea/",
+      "https://www.hallcontracting.com.au/projects/ports-and-harbours/motukea-container-terminal",
+      "https://www.worldcargonews.com/news/2026/09/motukea-international-terminal-hits-a-productivity-record-readies-for-rtgs/",
+      "https://files.swireshipping.com/assets/Service_Framework/Service_Framework_PNG.pdf"
+    ]
+  },
+  {
+    "slug": "honiara",
+    "name": "Honiara",
+    "fullName": "Port of Honiara (Point Cruz)",
+    "country": "Solomon Islands",
+    "aliases": [
+      "Honiara",
+      "Point Cruz",
+      "Port of Honiara",
+      "Honiara Container Terminal"
+    ],
+    "locode": "SBHIR",
+    "location": "On the Point Cruz peninsula in central Honiara, the capital, on the north coast of Guadalcanal.",
+    "summary": "The Port of Honiara is the main port of entry for Solomon Islands and is managed by the Solomon Islands Ports Authority (SIPA), which also carries out all stevedoring. A second international wharf and container yard, built with a Japanese (JICA) grant, was commissioned in 2016. The port handled 294 international vessel calls and 33,830 TEU in 2023.",
+    "vehicleHandling": "There are two international berths: Berth 1 (110 to 130 m) and Berth 2 (150 m, up to about 12 m draft), which is Ro-Ro capable. There are no shore cranes, so containers are landed with ships' gear and handled by SIPA's reach stackers and forklifts; cars from outside the region normally arrive in containers.",
+    "hinterland": "Cargo leaves by road across Guadalcanal or is reshipped to the outer islands by ferry and small boat from the adjacent Domestic Wharf.",
+    "facts": [
+      {
+        "label": "Port authority and stevedore",
+        "value": "Solomon Islands Ports Authority (SIPA)"
+      },
+      {
+        "label": "International berths",
+        "value": "2 (Berth 2, 150 m, Ro-Ro capable)"
+      },
+      {
+        "label": "Container traffic",
+        "value": "33,830 TEU (2023)"
+      },
+      {
+        "label": "International vessel calls",
+        "value": "294 (2023)"
+      },
+      {
+        "label": "Second wharf commissioned",
+        "value": "2016 (JICA grant)"
+      }
+    ],
+    "sources": [
+      "https://www.sipa.com.sb/sipa-facilities/ports/honiara-port/",
+      "https://lca.logcluster.org/211-solomon-islands-port-honiara",
+      "https://www.sipa.com.sb/port-news/posts/2022/april/jica-a-testament-of-genuine-partnership/",
+      "https://en.wikipedia.org/wiki/Port_of_Honiara"
+    ]
+  },
+  {
+    "slug": "port-vila",
+    "name": "Port Vila",
+    "fullName": "Port of Port Vila (Lapetasi International Wharf)",
+    "country": "Vanuatu",
+    "aliases": [
+      "Port Vila",
+      "Vila",
+      "Lapetasi",
+      "Lapetasi International Wharf",
+      "Lapetasi Wharf"
+    ],
+    "locode": "VUVLI",
+    "location": "In Port Vila harbour on Efate Island, Shefa Province, the site of Vanuatu's capital.",
+    "summary": "Port Vila is Vanuatu's principal port. International cargo ships use the Lapetasi International Wharf, a 200 m container berth financed by a Japanese government loan and opened in February 2018, while the older Main International Wharf takes cruise ships and tankers. The Main Wharf was damaged in the earthquake of 17 December 2024 and was still unrepaired in February 2025, but Lapetasi remained in operation.",
+    "vehicleHandling": "Lapetasi is a container berth with 13 m alongside and no shore cranes. Ifira Port Development Services (IPDS) handles all stevedoring and works the yard with 45-tonne reach stackers; no RoRo equipment is listed, so cars arrive in containers.",
+    "hinterland": "Efate Island and the capital; cargo for other islands is reshipped on domestic vessels.",
+    "facts": [
+      {
+        "label": "Cargo berth",
+        "value": "Lapetasi International Wharf, 200 m, 13 m alongside"
+      },
+      {
+        "label": "Opened",
+        "value": "February 2018"
+      },
+      {
+        "label": "Stevedore",
+        "value": "Ifira Port Development Services (IPDS)"
+      },
+      {
+        "label": "Vessel calls at Lapetasi",
+        "value": "69 (2022)"
+      },
+      {
+        "label": "Brisbane to Port Vila",
+        "value": "About 14 days (Neptune Pacific AUSPAC, 2026)"
+      }
+    ],
+    "sources": [
+      "https://lca.logcluster.org/vanuatu-211-port-port-vila",
+      "https://www.brianperrycivil.co.nz/projects/port-vila-lapetasi-international-multi-purpose-wharf",
+      "https://www.vanuatuindependent.com/2018/02/24/port-vilas-lapetasi-international-wharf-officially-opens/",
+      "https://vpmu.gov.vu/index.php/news/113-container-handling-at-wharf-to-be-improved-with-new-reach-stackers",
+      "https://npdlship.com/assets/Schedules-2026/Weekly-Schedules/AU_29-09-2026.pdf"
+    ]
+  },
+  {
+    "slug": "luganville",
+    "name": "Luganville",
+    "fullName": "Port of Luganville International Wharf, Espiritu Santo",
+    "country": "Vanuatu",
+    "aliases": [
+      "Luganville",
+      "Santo",
+      "Espiritu Santo",
+      "Luganville International Wharf"
+    ],
+    "locode": "VUSAN",
+    "location": "On the south-east coast of Espiritu Santo in Sanma Province, northern Vanuatu, about 2 km from Luganville town.",
+    "summary": "Luganville is Vanuatu's second international port. Its main wharf was rehabilitated and extended to a 361 m berth with a Chinese Eximbank concessional loan, with work running from July 2015 to August 2017. It handled 31 vessel calls and 5,024 TEU in 2022.",
+    "vehicleHandling": "The single 360 m international berth, with about 12 m at the wharf front, is shared by cargo and cruise ships and has no cranes, so ships must use their own gear (minimum 38 t). Northern Islands Stevedoring Company (NISCOL) handles all stevedoring with large forklifts and sidelifters; cars arrive in containers, and the container freight station holds about 1,000 TEU.",
+    "hinterland": "Espiritu Santo and the northern islands, with the adjacent Samansen Wharf serving domestic ships and ferries.",
+    "facts": [
+      {
+        "label": "International berth",
+        "value": "360 m, about 12 m at the wharf front"
+      },
+      {
+        "label": "Stevedore",
+        "value": "Northern Islands Stevedoring Company (NISCOL)"
+      },
+      {
+        "label": "Container traffic",
+        "value": "5,024 TEU (2022)"
+      },
+      {
+        "label": "Wharf rebuild completed",
+        "value": "August 2017"
+      },
+      {
+        "label": "Feeder",
+        "value": "Neptune Pacific AUSPAC, alternate sailings from Brisbane (2026)"
+      }
+    ],
+    "sources": [
+      "https://lca.logcluster.org/vanuatu-212-port-luganville-santo",
+      "https://china.aiddata.org/projects/37748/",
+      "https://www.marineinsight.com/2-major-ports-in-vanuatu/",
+      "https://npdlship.com/assets/Schedules-2026/Weekly-Schedules/AU_29-09-2026.pdf"
+    ]
+  },
+  {
+    "slug": "tibar-bay",
+    "name": "Tibar Bay",
+    "fullName": "Tibar Bay Port",
+    "country": "Timor-Leste",
+    "aliases": [
+      "Tibar",
+      "Tibar Bay Port",
+      "Dili",
+      "Port of Dili",
+      "Timor Port"
+    ],
+    "locode": "TLDIL",
+    "location": "At Tibar Bay in Liquica municipality, about 12 km west of Dili on the north coast of Timor.",
+    "summary": "Tibar Bay Port began operating on 30 September 2022 and took over all container ship operations from the old Port of Dili, which now serves domestic ferries and cruise ships. It is run by Timor Port, a public-private partnership under a 30-year concession signed in 2016 with the Bolloré group, and is the only port in the country able to receive international cargo vessels. It handled 58,267 TEU between October 2022 and July 2023, almost all of it imports.",
+    "vehicleHandling": "Tibar has 630 m of quay in two berths with 16 m draft, one for container ships and one for general cargo, worked by ship-to-shore gantries, rubber-tyred gantries and reach stackers. Cars from outside the region arrive in containers at Tibar; RoRo loading continues at the old Dili port, but only for domestic ferries to Oecusse and Atauro.",
+    "hinterland": "A paved road links the port to Dili; beyond the capital, cargo moves with small trucking firms on more constrained roads.",
+    "facts": [
+      {
+        "label": "Operator",
+        "value": "Timor Port (public-private partnership)"
+      },
+      {
+        "label": "Opened",
+        "value": "30 September 2022"
+      },
+      {
+        "label": "Quay",
+        "value": "630 m, 2 berths, 16 m draft"
+      },
+      {
+        "label": "Container yard",
+        "value": "27 ha, about 20,000 TEU"
+      },
+      {
+        "label": "Feeder",
+        "value": "Swire East Timor Service from Singapore via Surabaya, every 10 days (2024)"
+      }
+    ],
+    "sources": [
+      "https://lca.logcluster.org/212-timor-leste-port-tibar-bay",
+      "https://www.lca.logcluster.org/211-timor-leste-port-dili",
+      "https://timor-leste.gov.tl/?p=31233&lang=en&n=1",
+      "https://www.swireshipping.com/information/news-advisories/advisories/operation/2022-09-tibar-bay-port-update/",
+      "https://files.swireshipping.com/assets/Service_Framework/Service_Framework_ETS.pdf",
+      "https://en.wikipedia.org/wiki/Tibar_Bay_Port"
+    ]
+  },
+  {
+    "slug": "apia",
+    "name": "Apia",
+    "fullName": "Port of Apia (Matautu)",
+    "country": "Samoa",
+    "aliases": [
+      "Matautu",
+      "Apia Port"
+    ],
+    "locode": "WSAPW",
+    "location": "Apia's international port lies at Matautu on the harbour of Samoa's capital, on the north coast of Upolu.",
+    "summary": "Apia is Samoa's international cargo port and is run by the Samoa Ports Authority. It is called weekly by Neptune Pacific's NZPAC service from Auckland and Tauranga, and also by Matson's South Pacific services (2026).",
+    "vehicleHandling": "The port has two main wharves, No. 1 at 165 metres with 9.5 metres alongside and No. 2 at 185 metres with 10.4 metres alongside, backed by a 1.8 hectare container park. The sources describe no dedicated RoRo ramp; cars arrive on container services and are handled through the container berths.",
+    "hinterland": "Apia is Samoa's capital and main town, on Upolu.",
+    "facts": [
+      {
+        "label": "Wharf No. 1",
+        "value": "165 m, 9.5 m depth"
+      },
+      {
+        "label": "Wharf No. 2",
+        "value": "185 m, 10.4 m depth"
+      },
+      {
+        "label": "Container park",
+        "value": "1.8 ha"
+      },
+      {
+        "label": "Reefer plugs",
+        "value": "72"
+      },
+      {
+        "label": "Operator",
+        "value": "Samoa Ports Authority"
+      }
+    ],
+    "sources": [
+      "https://samoaportsauthority.wordpress.com/apia-port-facilities/",
+      "https://pacificforumline.com/shipping/countries/samoa/apia",
+      "https://npdlship.com/npdl-new-services-nz/overview"
+    ]
+  },
+  {
+    "slug": "pago-pago",
+    "name": "Pago Pago",
+    "fullName": "Port of Pago Pago",
+    "country": "American Samoa",
+    "aliases": [
+      "Pago Pago Harbor"
+    ],
+    "locode": "ASPPG",
+    "location": "Pago Pago lies in a deep, sheltered natural harbour on Tutuila, the main island of American Samoa.",
+    "summary": "Pago Pago is American Samoa's main port, managed by the territory's Port Administration, with a container terminal, a multi-use wharf for cruise ships and an inter-island terminal. It is called by Neptune Pacific's NZPAC service from New Zealand and by Matson from both Auckland and, via Honolulu, the US West Coast.",
+    "vehicleHandling": "Containers are handled at the port's container terminal, worked by two stevedoring companies, Harbor Maritime and Stevedores and Peter E. Reid Stevedore. The sources describe no dedicated RoRo berth, and the lines calling are container services, so cars come through the container terminal.",
+    "hinterland": "Tutuila is the main populated island; the Manu'a group is served through small local harbours at Ofu, Ta'u and Faleasao.",
+    "facts": [
+      {
+        "label": "Harbour depth",
+        "value": "Average about 30 fathoms (180 ft)"
+      },
+      {
+        "label": "Stevedores",
+        "value": "Harbor Maritime and Stevedores; Peter E. Reid Stevedore"
+      },
+      {
+        "label": "Port entry notice",
+        "value": "96 hours"
+      },
+      {
+        "label": "Operator",
+        "value": "American Samoa Port Administration"
+      }
+    ],
+    "sources": [
+      "https://portadministration.as.gov/seaports/port-of-pago-pago",
+      "https://portadministration.as.gov/",
+      "https://pacificforumline.com/shipping/countries/american-samoa/pago-pago"
+    ]
+  },
+  {
+    "slug": "nukualofa",
+    "name": "Nuku'alofa",
+    "fullName": "Queen Salote International Wharf, Nuku'alofa",
+    "country": "Tonga",
+    "aliases": [
+      "Queen Salote Wharf",
+      "QSIW",
+      "Nukualofa"
+    ],
+    "locode": "TOTBU",
+    "location": "Queen Salote International Wharf is in Nuku'alofa, Tonga's capital, on the north coast of Tongatapu.",
+    "summary": "Queen Salote International Wharf is Tonga's only deep-sea port and handles about 98 per cent of the country's imports, run by Ports Authority Tonga. A major rebuild of Wharf 1 and a 45 metre extension of Wharf 2, funded by the Asian Development Bank and Australia, was due to finish in 2026 and is expected to lift capacity from 30,000 to 45,000 TEU a year (2024).",
+    "vehicleHandling": "Queen Salote Berths 1 and 2 are multi-purpose and can take RoRo vessels up to 110 metres with 11 metre drafts. The container terminal can store up to 700 containers, with 63 reefer plugs.",
+    "hinterland": "Tongatapu is the main island; the Vava'u and Ha'apai groups are reached by inter-island shipping, and some Matson voyages call Vava'u directly.",
+    "facts": [
+      {
+        "label": "Multi-purpose berths",
+        "value": "Queen Salote Berths 1 and 2, RoRo vessels up to 110 m"
+      },
+      {
+        "label": "Container storage",
+        "value": "Up to 700 containers, 63 reefer plugs"
+      },
+      {
+        "label": "Share of imports",
+        "value": "About 98% (2024)"
+      },
+      {
+        "label": "Capacity after upgrade",
+        "value": "45,000 TEU a year, up from 30,000 (2024)"
+      },
+      {
+        "label": "Operator",
+        "value": "Ports Authority Tonga"
+      }
+    ],
+    "sources": [
+      "https://pacificports.org/directory/ports-authority-tonga/",
+      "https://pacificports.org/tonga-qsiw-project/",
+      "https://pacificforumline.com/shipping/countries/tonga/nukualofa"
+    ]
+  },
+  {
+    "slug": "avatiu",
+    "name": "Avatiu",
+    "fullName": "Avatiu Harbour, Rarotonga",
+    "country": "Cook Islands",
+    "aliases": [
+      "Rarotonga",
+      "Avatiu Port",
+      "Avarua"
+    ],
+    "locode": "CKRAR",
+    "location": "Avatiu harbour is on the north coast of Rarotonga, next to the capital Avarua.",
+    "summary": "Avatiu is the Cook Islands' primary international port, run by the Crown-owned Ports Authority, and handles about 90 per cent of food imports and all of the country's fuel. An Asian Development Bank project in 2011 and 2012 widened the entrance, deepened the berth and rebuilt the quay.",
+    "vehicleHandling": "Since the rebuild, container ships and tankers up to 120 metres long can berth alongside the quay. The sources describe no dedicated RoRo ramp; the lines calling from Auckland are container services, so cars come across the container quay.",
+    "hinterland": "Some Auckland sailings continue from Rarotonga to Aitutaki.",
+    "facts": [
+      {
+        "label": "Maximum vessel length",
+        "value": "120 m (after 2012 rebuild)"
+      },
+      {
+        "label": "Share of food imports",
+        "value": "About 90%"
+      },
+      {
+        "label": "Rebuild",
+        "value": "ADB-funded, March 2011 to August 2012"
+      },
+      {
+        "label": "Operator",
+        "value": "Cook Islands Ports Authority"
+      }
+    ],
+    "sources": [
+      "https://www.adb.org/results/cook-islands-port-vital-sea-link-pacific-shipping",
+      "https://www.ports.gov.ck/",
+      "https://pacificforumline.com/shipping/countries/cook-islands/rarotonga"
+    ]
+  },
+  {
+    "slug": "funafuti",
+    "name": "Funafuti",
+    "fullName": "Funafuti International Port",
+    "country": "Tuvalu",
+    "aliases": [
+      "Fongafale"
+    ],
+    "locode": "TVFUN",
+    "location": "Funafuti port is towards the northern end of Fongafale islet, on the sheltered lagoon side of Funafuti atoll.",
+    "summary": "Funafuti is Tuvalu's only international port, with an international cargo wharf and a domestic wharf for the inter-island ships. It is served via Fiji by Neptune Pacific's Capitaine Wallis rotation and by Swire Shipping connections through Suva (2026).",
+    "vehicleHandling": "The international cargo wharf is 80 metres long and the domestic wharf 50 metres, with a port operations area of about 9,000 square metres, of which 6,000 is container storage (2022). There is no RoRo facility in the sources; cars arrive on small container ships and are handled over the international cargo wharf.",
+    "hinterland": "The outer atolls are served by government inter-island ships berthing at the domestic wharf.",
+    "facts": [
+      {
+        "label": "International cargo wharf",
+        "value": "80 m (2022)"
+      },
+      {
+        "label": "Domestic wharf",
+        "value": "50 m (2022)"
+      },
+      {
+        "label": "Port operations area",
+        "value": "About 9,000 m2, 6,000 m2 container storage (2022)"
+      },
+      {
+        "label": "Main link",
+        "value": "Via Suva and Lautoka, Fiji"
+      }
+    ],
+    "sources": [
+      "https://www.adb.org/sites/default/files/project-documents/54463/54463-001-sddr-en.pdf",
+      "https://www.swireshipping.com/information/our-markets/oceania/tuvalu/",
+      "https://container-news.com/neptune-pacific-adjusts-intrapac-and-micropac-schedules/",
+      "https://www.cogoport.com/en/knowledge-center/resources/port-info/funafuti"
+    ]
+  },
+  {
+    "slug": "mata-utu",
+    "name": "Mata-Utu",
+    "fullName": "Port of Mata-Utu, Wallis",
+    "country": "Wallis and Futuna",
+    "aliases": [
+      "Mata'Utu",
+      "Mata Utu",
+      "Wallis"
+    ],
+    "locode": "WFMAU",
+    "location": "Mata-Utu's commercial port is on the east coast of Wallis (Uvea), inside the lagoon, next to the territory's capital.",
+    "summary": "Mata-Utu is the commercial port through which Wallis and Futuna is supplied, managed by the territory's maritime affairs and ports service. An extension finished at the end of 2013 added an 8,000 square metre platform and a new 60 metre quay, and Wallis handled 1,482 containers in 2017.",
+    "vehicleHandling": "Containers are landed at the commercial quay and handled by one of two private stevedoring firms using mobile equipment. The sources describe no RoRo service, so cars arrive in containers on the Fiji rotation.",
+    "hinterland": "Some containers are unpacked at Wallis and repacked for Futuna, which has its own small port at Leava.",
+    "facts": [
+      {
+        "label": "New quay",
+        "value": "60 m (completed end 2013)"
+      },
+      {
+        "label": "Platform",
+        "value": "8,000 m2 (2013)"
+      },
+      {
+        "label": "Containers handled",
+        "value": "1,482 (2017)"
+      },
+      {
+        "label": "Container ship calls",
+        "value": "18 (2017)"
+      },
+      {
+        "label": "Stevedores",
+        "value": "Two private firms"
+      }
+    ],
+    "sources": [
+      "https://igedd.documentation.developpement-durable.gouv.fr/documents/Affaires-0011358/012654-01_rapport-final_publie.pdf",
+      "https://www.seabaycargo.com/seaport/detail/Mata-Utu_France_WFMAU.html",
+      "https://www.moana.nc/fr.index.html"
+    ]
   }
 ]
