@@ -29,6 +29,8 @@ interface Props {
   title: string;
   description: string;
   countryName: string;
+  /** Name shown on the page where it differs from the lookup name (USA shows "United States of America (USA)"). */
+  displayName?: string;
   badgeText?: string;
   heading?: string;
   intro?: string;
@@ -48,17 +50,18 @@ const {
   title,
   description,
   countryName,
-  badgeText = `Car Export Specialists from UK to ${countryName}`,
-  heading = `UK Car Shipping to ${countryName}`,
+  displayName = countryName,
+  badgeText = `Car Export Specialists from UK to ${displayName}`,
+  heading = `UK Car Shipping to ${displayName}`,
   quickFacts,
   tocLinks,
   popularBrands = [],
   destinationPorts = [],
   fromPrice,
   faqs = [],
-  intro = `UK Vehicle Exporters Ltd sources and exports quality vehicles from the UK to ${countryName}. We handle the whole process, from car sourcing, tax-free supply (VAT reclaiming), buy on your behalf, negotiations, inspections, collection and delivery to the port, loading onto the ship, UK customs clearance, VAT-reclaiming, and shipping to your destination port (${destinationPorts.join(', ') || countryName}).`,
+  intro = `UK Vehicle Exporters Ltd sources and exports quality vehicles from the UK to ${displayName}. We handle the whole process, from car sourcing, tax-free supply (VAT reclaiming), buy on your behalf, negotiations, inspections, collection and delivery to the port, loading onto the ship, UK customs clearance, VAT-reclaiming, and shipping to your destination port (${destinationPorts.join(', ') || countryName}).`,
   finalCtaHeading = 'Talk It Through with an Export Specialist',
-  finalCtaText = `If you'd like to talk through any part of shipping your car to ${countryName}, our team is happy to help.`,
+  finalCtaText = `If you'd like to talk through any part of shipping your car to ${displayName}, our team is happy to help.`,
 } = Astro.props;
 
 // fromPriceFor() falls back to the 20ft container rate when a country has no
@@ -81,7 +84,7 @@ const breadcrumbSchema = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: site + '/' },
     { '@type': 'ListItem', position: 2, name: 'All Destinations', item: site + '/car-shipping' },
-    { '@type': 'ListItem', position: 3, name: countryName, item: pageUrl },
+    { '@type': 'ListItem', position: 3, name: displayName, item: pageUrl },
   ],
 };
 
@@ -141,7 +144,7 @@ const faqSchema = faqs.length
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
         <a href="/car-shipping" class="hover:text-[var(--color-primary)] transition-colors">All Destinations</a>
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-        <span class="text-white">{countryName}</span>
+        <span class="text-white">{displayName}</span>
       </nav>
       <span class="inline-block bg-[var(--color-primary)]/10 text-[var(--color-primary)] text-sm font-semibold px-4 py-1.5 rounded-full border border-[var(--color-primary)]/20 mb-4">
         {badgeText}
@@ -216,7 +219,7 @@ const faqSchema = faqs.length
           <!-- Popular Brands -->
           {popularBrands.length > 0 && (
             <div class="bg-gray-50 rounded-2xl p-6">
-              <h3 class="font-semibold text-gray-900 mb-4 font-[family-name:var(--font-heading)]">Popular Brands for {countryName}</h3>
+              <h3 class="font-semibold text-gray-900 mb-4 font-[family-name:var(--font-heading)]">Popular Brands for {displayName}</h3>
               <div class="flex flex-wrap gap-2">
                 {popularBrands.map((brand) => (
                   <span class="bg-white border border-gray-200 text-sm text-gray-700 px-3 py-1.5 rounded-full whitespace-nowrap">{brand}</span>
@@ -255,7 +258,7 @@ const faqSchema = faqs.length
 
           <!-- CTA -->
           <div class="bg-[var(--color-primary)] rounded-2xl p-6 text-center">
-            <h3 class="font-semibold text-white text-lg mb-2 font-[family-name:var(--font-heading)]">Ready to Export to {countryName}?</h3>
+            <h3 class="font-semibold text-white text-lg mb-2 font-[family-name:var(--font-heading)]">Ready to Export to {displayName}?</h3>
             <p class="text-white/80 text-sm mb-4">Get a personalised, itemised quote for your vehicle export.</p>
             <a href="/contact" class="inline-block bg-white text-[var(--color-primary)] px-6 py-2.5 rounded-full font-semibold text-sm hover:shadow-lg transition-all">
               Get Quote
@@ -271,9 +274,9 @@ const faqSchema = faqs.length
     <section id="faq" class="py-16 lg:py-20 bg-gray-50 scroll-mt-24">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 font-[family-name:var(--font-heading)] mb-2">
-          {countryName} Car Shipping FAQs
+          {displayName} Car Shipping FAQs
         </h2>
-        <p class="text-gray-600 mb-8">Common questions about shipping a vehicle from the UK to {countryName}.</p>
+        <p class="text-gray-600 mb-8">Common questions about shipping a vehicle from the UK to {displayName}.</p>
         <!-- CSS columns rather than grid: an open <details> only grows its own
              column, and single-column order is preserved top-to-bottom. -->
         <div class="lg:columns-2 lg:gap-4 space-y-3">
