@@ -22,6 +22,7 @@ import CountrySourcing from '../../components/CountrySourcing.astro';
 import CountryTaxFree from '../../components/CountryTaxFree.astro';
 import { fromPriceFor } from '../../data/shipping-prices';
 import { scheduleFactsFor, fromPortsLabel, listOf } from '../../data/schedule-facts';
+import { portLinkFor } from '../../data/ports';
 
 const countryName = 'USA';
 const popularBrands = ['Land Rover', 'Jaguar', 'Aston Martin', 'Bentley', 'Porsche', 'Mini'];
@@ -45,6 +46,12 @@ const shippingCosts = [
 ];
 
 const destinationPorts = facts.ports.length ? facts.ports : shippingCosts.map(r => r.destination);
+
+// Honolulu takes no direct UK sailing, so the schedule never lists it. It is
+// added to the sidebar list only, not to the quick facts or costs, which
+// describe the direct mainland sailings.
+const honoluluHref = portLinkFor('Honolulu', countryName);
+const sidebarPorts = honoluluHref ? [...destinationPorts, 'Honolulu'] : destinationPorts;
 
 const quickFacts = [
   facts.transit
@@ -114,7 +121,7 @@ const faqs = [
   quickFacts={quickFacts}
   tocLinks={tocLinks}
   popularBrands={popularBrands}
-  destinationPorts={destinationPorts}
+  destinationPorts={sidebarPorts}
   fromPrice={fromPrice}
   finalCtaHeading="Ready to Ship Your Car to the USA?"
   finalCtaText="Get in touch for an up-to-date quote on shipping your vehicle from the UK to any US port."
@@ -191,6 +198,18 @@ const faqs = [
       shipping schedule with departures from the main UK ports of Bristol, Felixstowe, Grangemouth, Liverpool
       and London Gateway.
     </p>
+
+    {honoluluHref && (
+      <>
+        <h3 class="text-xl font-semibold text-gray-900 font-[family-name:var(--font-heading)] mb-3 mt-6">Shipping a Car to Hawaii</h3>
+        <p class="text-gray-600 leading-relaxed">
+          No vessel sails to Hawaii direct from the UK, so cars for Honolulu cross to the US West Coast first
+          and continue on the Hawaii services that run from there. See our
+          <a href={honoluluHref} class="text-[var(--color-primary)] font-semibold hover:underline">Honolulu port guide</a>
+          for how the port handles vehicles and how the onward leg works.
+        </p>
+      </>
+    )}
   </div>
 
   <CountryBookingTerms />

@@ -7725,5 +7725,62 @@
       "https://www.seabaycargo.com/seaport/detail/Mata-Utu_France_WFMAU.html",
       "https://www.moana.nc/fr.index.html"
     ]
+  },
+  {
+    "slug": "honolulu",
+    "name": "Honolulu",
+    "fullName": "Honolulu Harbor",
+    "country": "USA",
+    "aliases": [
+      "Honolulu",
+      "Honolulu Harbor",
+      "Port of Honolulu",
+      "Honolulu, HI",
+      "Hawaii",
+      "Oahu"
+    ],
+    "locode": "USHNL",
+    "location": "On the south shore of the island of Oahu in Honolulu, Hawaii, with its piers running from Fort Armstrong near downtown to Sand Island and the Kapalama basin.",
+    "summary": "Honolulu Harbor is the principal commercial port of Hawaii and the hub of the state's harbor system, run by the Hawaii Department of Transportation Harbors Division. The 2050 master plan puts its cargo at over 12 million tons a year and describes it as the only gantry-crane port in the state, handling 1,197,000 TEU in fiscal year 2020. The state's new Kapalama Container Terminal, a project of about $555 million that is to raise the harbor's cargo capacity by 40 percent, was reported in August 2026 as due for completion by the end of 2026, with Pasha Hawaii moving there from Sand Island.",
+    "vehicleHandling": "No ship sails to Honolulu direct from the UK: cars arrive on the domestic Hawaii services from the US West Coast, which Matson runs from Long Beach and Oakland (Matson has suspended Hawaii car bookings through Tacoma) and Pasha Hawaii runs with enclosed ro-ro ships, taking cars at facilities in San Diego, Los Angeles, Oakland and Seattle. In Honolulu, Pasha handles ro-ro cars and rolling stock at Piers 1 and 2 (Fort Armstrong) with containers at Pier 51 on Sand Island, while Matson's con-ro ships land cars mainly at Piers 32 and 33 and at its Sand Island terminal (Piers 52 and 53), where it keeps its auto lot. Hawaii Stevedores also handles international ro-ro car deliveries at Pier 1, and the harbor handled 126,000 ro-ro autos in fiscal year 2020, down from 178,000 in fiscal year 2017.",
+    "hinterland": "Oahu, and the neighbour islands through Honolulu's hub role: Young Brothers runs inter-island tug and barge services from the Piers 39 to 40 Interisland Terminal, with 12 scheduled sailings a week to six neighbour island ports (2022), and Matson carries cars on to Kahului, Hilo and Nawiliwili by a monthly barge from Honolulu.",
+    "facts": [
+      {
+        "label": "Port authority",
+        "value": "Hawaii Department of Transportation, Harbors Division"
+      },
+      {
+        "label": "Vehicle berths",
+        "value": "Piers 1 to 2 (Pasha, international ro-ro); Piers 31 to 33 and Sand Island Piers 51 to 53 (Matson)"
+      },
+      {
+        "label": "Ro-ro autos",
+        "value": "126,000 units (FY 2020); 178,000 (FY 2017)"
+      },
+      {
+        "label": "Containers",
+        "value": "1,197,000 TEU (FY 2020)"
+      },
+      {
+        "label": "Mainland car links",
+        "value": "Long Beach and Oakland (Matson); San Diego, Los Angeles, Oakland, Seattle (Pasha Hawaii)"
+      },
+      {
+        "label": "All Hawaii harbors",
+        "value": "1.75 million TEU and 191,000 autos and trucks (FY to June 2024)"
+      }
+    ],
+    "sources": [
+      "https://hidot.hawaii.gov/harbors/files/2023/01/VOL-I_HHMP-2050.pdf",
+      "https://files.hawaii.gov/dbedt/economic/databook/2024-individual/18/185224.pdf",
+      "https://hidot.hawaii.gov/harbors/major-milestone-in-commercial-harbors-modernization-dedication-of-kapalama-container-terminal-phase-1-groundbreaking-of-phase-2/",
+      "https://www.staradvertiser.com/2026/08/22/hawaii-news/new-honolulu-harbor-cargo-terminal-nearing-completion/",
+      "https://www.pashahawaii.com/services/terminals/honolulu-roro",
+      "https://www.pashahawaii.com/services/terminals/honolulucontainers",
+      "https://www.pashahawaii.com/services/vehicles/terminal-locations",
+      "https://www.matson.com/matnav/services/hawaii.html",
+      "https://www.matson.com/frequently-asked-questions-for-shipping-your-car.html",
+      "https://incodocs.com/ports/us/sea-port/ushnl"
+    ]
   }
 ]
