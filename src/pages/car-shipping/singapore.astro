@@ -20,6 +20,7 @@ import CountrySourcing from '../../components/CountrySourcing.astro';
 import CountryTaxFree from '../../components/CountryTaxFree.astro';
 import { fromPriceFor } from '../../data/shipping-prices';
 import { approximateRatesFor } from '../../data/shipping-rates';
+import { sharedContainerFaqLine } from '../../data/shared-container-rates';
 import { scheduleFactsFor, fromPortsLabel, listOf } from '../../data/schedule-facts';
 
 const countryName = 'Singapore';
@@ -31,6 +32,7 @@ const fromPrice = fromPriceFor(countryName);
 // delivery inland, because the generator baked the figures in when the page
 // was written.
 const approx = approximateRatesFor(countryName);
+const sharedFaq = sharedContainerFaqLine(countryName);
 
 // Read at BUILD time, never baked in. The weekly schedule refresh moves dates,
 // adds carriers and opens new ports, so anything copied here would drift from
@@ -82,7 +84,7 @@ const tocLinks = [
 const faqs = [
   {
     q: `How much does it cost to ship a car from the UK to Singapore?`,
-    a: `${approx?.roro ? `RoRo shipping starts from around ${approx.roro} per vehicle${approx?.c20 ? `, and a 20ft container from about ${approx.c20}` : ''}` : `A 20ft container starts from around ${approx?.c20} per vehicle`}. Those are indicative rates from our published rate table and move with the market, so call us for the latest. A full export quote also covers the UK-side work: customs clearance, port handling, DVLA paperwork and export documentation.`,
+    a: `${approx?.roro ? `RoRo shipping starts from around ${approx.roro} per vehicle${approx?.c20 ? `, and a 20ft container from about ${approx.c20}` : ''}` : `A 20ft container starts from around ${approx?.c20} per vehicle`}. Those are indicative rates from our published rate table and move with the market, so call us for the latest.${sharedFaq ? ` ${sharedFaq}` : ''} A full export quote also covers the UK-side work: customs clearance, port handling, DVLA paperwork and export documentation.`,
   },
   {
     q: `How long does shipping from the UK to Singapore take?`,

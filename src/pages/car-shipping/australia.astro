@@ -8,6 +8,7 @@ import CountrySourcing from '../../components/CountrySourcing.astro';
 import CountryTaxFree from '../../components/CountryTaxFree.astro';
 import { fromPriceFor } from '../../data/shipping-prices';
 import { approximateRatesFor } from '../../data/shipping-rates';
+import { sharedContainerFaqLine } from '../../data/shared-container-rates';
 import { scheduleFactsFor, factsByServiceFor, listOf } from '../../data/schedule-facts';
 
 // Ports, carriers and transit times here are read from the live sailing
@@ -90,12 +91,13 @@ const fromPrice = fromPriceFor(countryName);
 // Indicative published rates, used in the FAQ so it cannot drift from the
 // costs table. Both read the same source.
 const approx = approximateRatesFor(countryName);
+const sharedFaq = sharedContainerFaqLine(countryName);
 
 // Answers restate facts already published on this page — keep the two in step.
 const faqs = [
   {
     q: 'How much does it cost to ship a car from the UK to Australia?',
-    a: `RoRo shipping to Australia starts from around ${approx?.roro}, with a 20ft private container from about ${approx?.c20} and a 40ft container from about ${approx?.c40}. Those are indicative rates from our published rate table and move with the market, so call us for the latest. A full export quote also covers the UK-side work: customs clearance, port handling, DVLA paperwork and export documentation.`,
+    a: `RoRo shipping to Australia starts from around ${approx?.roro}, with a 20ft private container from about ${approx?.c20} and a 40ft container from about ${approx?.c40}. Those are indicative rates from our published rate table and move with the market, so call us for the latest.${sharedFaq ? ` ${sharedFaq}` : ''} A full export quote also covers the UK-side work: customs clearance, port handling, DVLA paperwork and export documentation.`,
   },
   {
     q: 'How long does shipping from the UK to Australia take?',

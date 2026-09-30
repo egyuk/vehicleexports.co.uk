@@ -20,11 +20,18 @@
 // so an approximate freight figure is never passed off as covering UK customs,
 // handling and documentation.
 //
+// Where a forwarder's shared-container card covers the country, a "Shared
+// Container" card is added after whichever of the above is showing. It is a
+// separate product with its own terms (src/data/shared-container-rates.ts), so
+// it carries its own caveat line rather than sitting under the "approximate"
+// note, which is about the published table only.
+//
 // The included/excluded lists are deliberately NOT configurable — they are the
 // same commercial terms on every route, and the last excluded item ("All
 // destination country's import fees") is what keeps these pages UK-side.
 import { shippingRates } from '../data/shipping-prices';
 import { approximateRatesFor } from '../data/shipping-rates';
+import { sharedContainerRates } from '../data/shared-container-rates';
 import { factsByServiceFor } from './../data/schedule-facts';
 
 interface Props {
@@ -41,6 +48,7 @@ const hasCards = Boolean(rates?.roroSmall || rates?.container20);
 // Only consulted when there is no curated rate and no prose note.
 const approx = !hasCards && !rates?.note ? approximateRatesFor(countryName) : undefined;
 const hasApprox = Boolean(approx && (approx.roro || approx.c20));
+const shared = sharedContainerRates[countryName];
 
 // The published table carries a container rate for far more countries than it
 // carries a RoRo one, so a route we sail RoRo to could show a container card
@@ -185,7 +193,30 @@ const excluded = [
     </>
   )}
 
-  {!hasCards && !rates?.note && !hasApprox && (
+  {shared && (
+    <div class="border border-gray-100 rounded-xl p-5 mb-6">
+      <h4 class="font-semibold text-gray-900 font-[family-name:var(--font-heading)]">Shared Container</h4>
+      <p class="text-sm text-gray-500 mt-1 mb-4">Your vehicle travels inside a container shared with other vehicles, so it is protected like a private container shipment, for less.</p>
+      <dl class="grid sm:grid-cols-2 gap-x-6 gap-y-1 text-sm mb-4">
+        <div class="flex gap-2"><dt class="text-gray-500 shrink-0">Departs from</dt><dd class="font-semibold text-gray-900">{shared.departsFrom}</dd></div>
+        <div class="flex gap-2"><dt class="text-gray-500 shrink-0">Arrives at</dt><dd class="font-semibold text-gray-900">{shared.ports.join(', ')}</dd></div>
+      </dl>
+      <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-2 pt-3 border-t border-gray-100">
+        {shared.rates.map(r => (
+          <li class="flex items-center justify-between gap-3 text-sm text-gray-600">
+            <span>{r.vehicle}</span>
+            <span class="font-semibold text-gray-900 shrink-0">{r.price}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="text-sm text-gray-500 mt-4">
+        Per vehicle, from delivery to the {shared.departsFrom} depot to arrival at the port. Space is confirmed at
+        booking, and the shipping lines can add surcharges at short notice. {shared.evNote}{shared.note && ` ${shared.note}`}
+      </p>
+    </div>
+  )}
+
+  {!hasCards && !rates?.note && !hasApprox && !shared && (
     <div class="border border-gray-100 rounded-xl p-5 mb-6 sm:flex sm:items-center sm:justify-between sm:gap-6">
       <div>
         <h4 class="font-semibold text-gray-900 font-[family-name:var(--font-heading)]">Call for price</h4>

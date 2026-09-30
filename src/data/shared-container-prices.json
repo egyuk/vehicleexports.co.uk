@@ -1,0 +1,42 @@
+{
+  "_comment": "Written by the monthly shared-container rate update. Labels, ports and departure depots live in shared-container-rates.ts; change them there.",
+  "updated": "2026-09-30",
+  "validTo": "2026-10-31",
+  "prices": {
+    "Australia": {
+      "motorbike": 878,
+      "saloon": 1283,
+      "suv": 1553,
+      "van": 2295
+    },
+    "New Zealand": {
+      "motorbike": 1080,
+      "saloon": 1519,
+      "suv": 1829,
+      "van": 2450
+    },
+    "Hong Kong": {
+      "saloon": 1040,
+      "suv": 1148
+    },
+    "Singapore": {
+      "saloon": 1040,
+      "suv": 1148
+    },
+    "South Africa": {
+      "saloon": 1364,
+      "suv": 1702
+    },
+    "Cyprus": {
+      "saloon": 1033,
+      "suvLow": 1249,
+      "suvHigh": 1688,
+      "smallVan": 1755,
+      "van": 2079,
+      "vanLong": 2241
+    }
+  },
+  "evSurcharge": {
+    "Cyprus": 338
+  }
+}

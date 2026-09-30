@@ -3,6 +3,22 @@ import Layout from '../../layouts/Layout.astro';
 // The two rate tables moved to src/data/shipping-rates.ts on 2026-09-03 so the
 // country pages can read the same figures. This page renders them unchanged.
 import { roroPrices, containerPrices } from '../../data/shipping-rates';
+// Shared-container prices are a separate, monthly card - see the top of that file.
+import { sharedContainerRates } from '../../data/shared-container-rates';
+
+// One table row per vehicle type. The country, ports and depot cells span a
+// country's rows, which is safe with the search below because every row of a
+// country carries the same search text, so they always show and hide together.
+const sharedRows = Object.entries(sharedContainerRates).flatMap(([country, card], group) =>
+  card.rates.map((rate, i) => ({ country, card, rate, group, first: i === 0 })),
+);
+// Route notes, plus the EV rule wherever it is not the usual "case by case".
+const sharedNotes = Object.entries(sharedContainerRates)
+  .map(([country, card]) => ({
+    country,
+    text: [card.evNote.includes('case by case') ? '' : card.evNote, card.note ?? ''].filter(Boolean).join(' '),
+  }))
+  .filter(n => n.text);
 
 const costFactors = [
   "the location of your country – the further away you are from the UK, the more expensive the cost of shipping your vehicle to your country;",
@@ -133,6 +149,7 @@ const serviceLevels = [
       </div>
       <p class="text-gray-600 leading-relaxed">
         You also have the option to share a containers with someone else sending their vehicle. These are usually 40ft containers.
+        <a href="#shared" class="text-[var(--color-primary)] font-semibold hover:underline">See the shared container prices</a>.
       </p>
     </div>
   </section>
@@ -207,6 +224,47 @@ const serviceLevels = [
     </div>
   </section>
 
+  <!-- Shared Container Prices -->
+  <section id="shared" class="pt-3 pb-16 lg:pb-20 bg-gray-50 scroll-mt-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 font-[family-name:var(--font-heading)] mb-4">Shared Container Prices <span class="text-sm font-normal text-gray-400">— Per vehicle, by vehicle type</span></h2>
+      <p class="text-gray-600 leading-relaxed mb-6">
+        Your vehicle shares a container with others going the same way, so it travels protected inside a container
+        for less than a private one. Prices run from delivery to the UK depot the container departs from, to arrival
+        at the port.
+      </p>
+      <div class="overflow-x-auto rounded-xl border border-gray-100 bg-white">
+        <table class="w-full text-sm rate-table" data-table="shared">
+          <thead>
+            <tr class="bg-gray-50 text-left">
+              <th class="px-4 py-3 font-semibold text-gray-900 font-[family-name:var(--font-heading)]">Country</th>
+              <th class="px-4 py-3 font-semibold text-gray-900 font-[family-name:var(--font-heading)]">Arrival port</th>
+              <th class="px-4 py-3 font-semibold text-gray-900 font-[family-name:var(--font-heading)]">Departs from</th>
+              <th class="px-4 py-3 font-semibold text-gray-900 font-[family-name:var(--font-heading)]">Vehicle</th>
+              <th class="px-4 py-3 font-semibold text-gray-900 font-[family-name:var(--font-heading)]">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sharedRows.map(({ country, card, rate, group, first }) => (
+              <tr class:list={["rate-row", first && "border-t border-gray-100", group % 2 === 1 && "bg-gray-50/50"]} data-search={`${country} ${card.ports.join(' ')} ${card.departsFrom}`.toLowerCase()}>
+                {first && <td rowspan={card.rates.length} class="px-4 py-3 text-gray-900 font-medium align-top">{country}</td>}
+                {first && <td rowspan={card.rates.length} class="px-4 py-3 text-gray-600 align-top">{card.ports.join(', ')}</td>}
+                {first && <td rowspan={card.rates.length} class="px-4 py-3 text-gray-600 align-top whitespace-nowrap">{card.departsFrom}</td>}
+                <td class="px-4 py-2 text-gray-600">{rate.vehicle}</td>
+                <td class="px-4 py-2 text-[var(--color-primary)] font-semibold whitespace-nowrap">{rate.price}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p id="shared-empty" class="hidden text-center text-gray-400 text-sm py-6">No matching destinations found.</p>
+      <ul class="text-xs text-gray-400 mt-4 space-y-1">
+        <li>Space is confirmed at booking, and the shipping lines can add surcharges at short notice. Destination charges are not included. Electric and hybrid vehicles are quoted case by case unless shown below.</li>
+        {sharedNotes.map(n => <li><strong class="font-semibold text-gray-500">{n.country}:</strong> {n.text}</li>)}
+      </ul>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="pt-3 pb-16 lg:pb-20 bg-[var(--color-dark)]">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -233,8 +291,7 @@ const serviceLevels = [
         row.classList.toggle('hidden', !match);
         if (match) visibleCount++;
       });
-      const emptyId = table.dataset.table === 'roro' ? 'roro-empty' : 'container-empty';
-      document.getElementById(emptyId)?.classList.toggle('hidden', visibleCount > 0);
+      document.getElementById(`${table.dataset.table}-empty`)?.classList.toggle('hidden', visibleCount > 0);
     });
   });
 </script>
