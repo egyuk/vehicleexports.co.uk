@@ -7,6 +7,7 @@
 import Layout from './Layout.astro';
 import CountryExportServices from '../components/CountryExportServices.astro';
 import { portLinkFor } from '../data/ports';
+import { approximateRatesFor } from '../data/shipping-rates';
 
 interface QuickFact {
   label: string;
@@ -60,6 +61,14 @@ const {
   finalCtaText = `If you'd like to talk through any part of shipping your car to ${countryName}, our team is happy to help.`,
 } = Astro.props;
 
+// fromPriceFor() falls back to the 20ft container rate when a country has no
+// RoRo rate (Papua New Guinea is priced by container only), so the chip must
+// not call every "from" figure a RoRo price.
+const approxRates = approximateRatesFor(countryName);
+const priceService = approxRates && !approxRates.roro && approxRates.c20 === fromPrice
+  ? 'Container shipping'
+  : 'RoRo shipping';
+
 // Structured data. BreadcrumbList and Service always; FAQPage only when the
 // page supplies FAQs. Google reads JSON-LD from the body, so these render
 // alongside the content rather than needing a head slot.
@@ -104,7 +113,7 @@ const serviceSchema = {
           '@type': 'Offer',
           price: fromPrice.replace(/[^\d.]/g, ''),
           priceCurrency: 'GBP',
-          description: `RoRo car shipping to ${countryName} from ${fromPrice}`,
+          description: `${priceService} to ${countryName} from ${fromPrice}`,
         },
       }
     : {}),
@@ -142,7 +151,7 @@ const faqSchema = faqs.length
       {fromPrice && (
         <p class="inline-flex items-center gap-2 bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 px-4 py-2 rounded-xl text-sm font-semibold mt-6">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-          RoRo shipping from {fromPrice} per vehicle
+          {priceService} from {fromPrice} per vehicle
         </p>
       )}
     </div>

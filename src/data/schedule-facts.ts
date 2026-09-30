@@ -124,7 +124,20 @@ const resolveRows = (country: string): { rows: any[]; legs?: { country: string; 
       const i = h.indexOf(',');
       return { country: h.slice(0, i).trim(), port: h.slice(i + 1).trim() };
     });
-    const rows = legs.flatMap(l => rowsFor(l.country));
+    // Only the sailings that call at the hub PORT, not every port in the hub
+    // country. Guam routes via Long Beach, and taking all USA rows gave it the
+    // East Coast's one-week crossings and a "1-8 weeks" band no Long Beach
+    // sailing supports. A hub port with nothing upcoming falls back to its
+    // country, so the page still has a band rather than none.
+    const n = (x: string) => x.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const rows = legs.flatMap(l => {
+      const all = rowsFor(l.country);
+      const atPort = all.filter(r => {
+        const p = n(r.destination.split(',')[0]);
+        return p.includes(n(l.port)) || n(l.port).includes(p);
+      });
+      return atPort.length ? atPort : all;
+    });
     if (rows.length) return { rows, legs };
   }
   return { rows: [] };

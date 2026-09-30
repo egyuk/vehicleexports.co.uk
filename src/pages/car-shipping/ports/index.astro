@@ -43,12 +43,7 @@ const groups = Object.entries(continentCountries)
               <div class="bg-gray-50 border border-gray-100 rounded-lg p-3 text-sm leading-relaxed">
                 <a href={c.href} class="font-semibold text-gray-900 hover:text-[var(--color-primary)]">{c.name}</a>
                 <span class="text-gray-400"> – </span>
-                {c.guides.map((p, i) => (
-                  <>
-                    {i > 0 && ', '}
-                    <a href={portHref(p)} class="text-gray-700 hover:text-[var(--color-primary)] hover:underline">{p.name}</a>
-                  </>
-                ))}
+                {c.guides.map((p, i) => <>{i > 0 && ', '}<a href={portHref(p)} class="text-gray-700 hover:text-[var(--color-primary)] hover:underline">{p.name}</a></>)}
               </div>
             ))}
           </div>
