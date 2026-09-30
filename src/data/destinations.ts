@@ -166,6 +166,15 @@ export const scheduleNames: Record<string, string> = {
   'Trinidad and Tobago': 'Trinidad',
 };
 
+// Longer names for the Countries menu only. The key stays the lookup name
+// everywhere else (rates, ports, schedule), so this changes the label and
+// nothing it resolves to. "United States of America" was measured before it
+// went in: it widens the Caribbean / North America column from 128px to 155px,
+// and the five columns then total 705px of the 716px the panel has at lg.
+export const menuNames: Record<string, string> = {
+  USA: 'United States of America',
+};
+
 // Landlocked destinations and the ports vehicles are landed at for them, as
 // "Country, Port" (the schedule page's destination filter values) so the
 // schedule page can point its empty state at those sailings. Usual port first.

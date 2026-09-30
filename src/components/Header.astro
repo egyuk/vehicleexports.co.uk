@@ -1,7 +1,7 @@
 ---
 import { services } from '../data/services';
 import { shippingServices } from '../data/shippingServices';
-import { continentCountries, continentPages } from '../data/destinations';
+import { continentCountries, continentPages, menuNames } from '../data/destinations';
 
 // The Shipping mega menu mirrors the Shipping Services list on /car-shipping;
 // car shipping itself gets the photo banner above the cards instead of a card.
@@ -13,7 +13,11 @@ const shippingCards = shippingServices.map(s => ({ name: s.name, href: `/shippin
 // none does.
 const countryGroups = Object.entries(continentCountries)
   .filter(([, countries]) => countries.length > 0)
-  .map(([title, countries]) => ({ title, links: countries, href: continentPages[title] }));
+  .map(([title, countries]) => ({
+    title,
+    links: countries.map(c => ({ ...c, name: menuNames[c.name] ?? c.name })),
+    href: continentPages[title],
+  }));
 
 // The desktop panel lays the groups out in fixed columns, largest group first
 // into the shortest column, so the tallest group sets the panel height. CSS
