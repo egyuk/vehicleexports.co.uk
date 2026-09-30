@@ -195,15 +195,16 @@ const serviceSchema = {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 font-[family-name:var(--font-heading)] mb-8">Our Other Export Services</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <!-- The title is the link (anchor text = the service name); after:inset-0 stretches its click area over the card. -->
         {related.map(s => (
-          <a href={`/services/${s.slug}`} class="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-all">
+          <div class="group relative bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-all">
             <div class="aspect-[16/10] overflow-hidden">
               <img src={s.image} alt={s.name} width="320" height="200" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
             <div class="p-4">
-              <h3 class="text-sm font-semibold text-gray-900 group-hover:text-[var(--color-primary)] leading-snug transition-colors font-[family-name:var(--font-heading)]">{s.name}</h3>
+              <h3 class="text-sm font-semibold text-gray-900 group-hover:text-[var(--color-primary)] leading-snug transition-colors font-[family-name:var(--font-heading)]"><a href={`/services/${s.slug}`} class="after:absolute after:inset-0">{s.name}</a></h3>
             </div>
-          </a>
+          </div>
         ))}
       </div>
     </div>

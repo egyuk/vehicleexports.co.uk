@@ -151,8 +151,10 @@ publishedPosts.forEach(p => { categoryCounts[p.data.category] = (categoryCounts[
         <div class="mt-16 pt-12 border-t border-gray-200">
           <h2 class="text-2xl font-bold text-gray-900 font-[family-name:var(--font-heading)] mb-8">Related Posts</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- The title is the link (anchor text = the post title); after:inset-0
+                 stretches its click area over the card. -->
             {related.map(r => (
-              <a href={`/car-export-news/${r.data.slug}`} class="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg hover:border-[var(--color-primary)]/20 transition-all duration-300">
+              <div class="group relative bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg hover:border-[var(--color-primary)]/20 transition-all duration-300">
                 <div class="relative aspect-[16/9] bg-gray-100 overflow-hidden">
                   {r.data.image ? (
                     <img src={r.data.image} alt={r.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -167,10 +169,12 @@ publishedPosts.forEach(p => { categoryCounts[p.data.category] = (categoryCounts[
                 </div>
                 <div class="p-5">
                   <p class="text-xs text-gray-400 mb-2">{formatDate(r.data.date)}</p>
-                  <h3 class="font-semibold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors font-[family-name:var(--font-heading)] leading-tight">{r.data.title}</h3>
+                  <h3 class="font-semibold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors font-[family-name:var(--font-heading)] leading-tight">
+                    <a href={`/car-export-news/${r.data.slug}`} class="after:absolute after:inset-0">{r.data.title}</a>
+                  </h3>
                   <p class="text-sm text-gray-500 mt-2 line-clamp-2">{r.data.description}</p>
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         </div>

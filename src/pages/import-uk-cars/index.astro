@@ -35,15 +35,17 @@ const destinations = [
   <section class="py-16 lg:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- The title is the link (anchor text = the country name); after:inset-0
+             stretches its click area over the card. -->
         {destinations.map((d) => (
-          <a href={d.href} class="group block bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:border-[var(--color-primary)]/30 transition-all">
-            <h3 class="text-lg font-semibold text-gray-900 font-[family-name:var(--font-heading)] group-hover:text-[var(--color-primary)] transition-colors">{d.name}</h3>
+          <div class="group relative block bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:border-[var(--color-primary)]/30 transition-all">
+            <h3 class="text-lg font-semibold text-gray-900 font-[family-name:var(--font-heading)] group-hover:text-[var(--color-primary)] transition-colors"><a href={d.href} class="after:absolute after:inset-0">{d.name}</a></h3>
             <p class="text-sm text-gray-500 mt-2">{d.desc}</p>
             <span class="inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary)] mt-4">
               View guide
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </span>
-          </a>
+          </div>
         ))}
       </div>
     </div>

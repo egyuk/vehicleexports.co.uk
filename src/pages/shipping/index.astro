@@ -26,24 +26,26 @@ import { shippingServices } from '../../data/shippingServices';
   <section class="py-16 lg:py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- The title is the link (anchor text = the service name); after:inset-0
+             stretches its click area over the card. -->
         {shippingServices.map(s => (
-          <a href={`/shipping/${s.slug}`} class="group bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-lg transition-all">
-            <h2 class="text-lg font-semibold text-gray-900 group-hover:text-[var(--color-primary)] leading-snug transition-colors font-[family-name:var(--font-heading)]">{s.name}</h2>
+          <div class="group relative bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-lg transition-all">
+            <h2 class="text-lg font-semibold text-gray-900 group-hover:text-[var(--color-primary)] leading-snug transition-colors font-[family-name:var(--font-heading)]"><a href={`/shipping/${s.slug}`} class="after:absolute after:inset-0">{s.name}</a></h2>
             <p class="text-sm text-gray-500 mt-2 leading-snug">{s.shortDesc}</p>
             <span class="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-primary)] mt-4">
               Learn more
               <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
             </span>
-          </a>
+          </div>
         ))}
-        <a href="/car-shipping" class="group bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-lg transition-all">
-          <h2 class="text-lg font-semibold text-gray-900 group-hover:text-[var(--color-primary)] leading-snug transition-colors font-[family-name:var(--font-heading)]">Car Shipping</h2>
+        <div class="group relative bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-lg transition-all">
+          <h2 class="text-lg font-semibold text-gray-900 group-hover:text-[var(--color-primary)] leading-snug transition-colors font-[family-name:var(--font-heading)]"><a href="/car-shipping" class="after:absolute after:inset-0">Car Shipping</a></h2>
           <p class="text-sm text-gray-500 mt-2 leading-snug">RoRo and container shipping to any country from the UK — rates, ports and destinations.</p>
           <span class="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-primary)] mt-4">
             Learn more
             <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </span>
-        </a>
+        </div>
       </div>
     </div>
   </section>

@@ -52,14 +52,16 @@ function formatDate(date: Date): string {
 
           <!-- Posts Grid -->
           <div id="posts-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            <!-- The title is the link (anchor text = the post title); after:inset-0
+                 stretches its click area over the card. -->
             {posts.map(post => (
               <article
-                class="blog-card group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300"
+                class="blog-card group relative bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300"
                 data-category={post.data.category}
                 data-title={post.data.title.toLowerCase()}
                 data-tags={(post.data.tags || []).join(',').toLowerCase()}
               >
-                <a href={`/car-export-news/${post.data.slug}`} class="block">
+                <div class="block">
                   <div class="relative aspect-[16/10] bg-gray-100 overflow-hidden">
                     {post.data.image ? (
                       <img src={post.data.image} alt={post.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
@@ -72,7 +74,7 @@ function formatDate(date: Date): string {
                     )}
                     <div class="blog-date-badge">{formatDate(post.data.date)}</div>
                   </div>
-                </a>
+                </div>
                 <div class="p-5">
                   <div class="flex items-center gap-3 mb-3 text-xs text-gray-500">
                     <span class="flex items-center gap-1">
@@ -82,13 +84,13 @@ function formatDate(date: Date): string {
                     <span class="bg-gray-100 text-gray-600 px-2 py-0.5 rounded text-xs">{post.data.category}</span>
                   </div>
                   <h2 class="font-semibold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors font-[family-name:var(--font-heading)] text-lg leading-tight mb-2">
-                    <a href={`/car-export-news/${post.data.slug}`}>{post.data.title}</a>
+                    <a href={`/car-export-news/${post.data.slug}`} class="after:absolute after:inset-0">{post.data.title}</a>
                   </h2>
                   <p class="text-sm text-gray-500 line-clamp-2 mb-4">{post.data.description}</p>
-                  <a href={`/car-export-news/${post.data.slug}`} class="inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary)] group-hover:gap-2 transition-all">
+                  <span class="inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary)] group-hover:gap-2 transition-all">
                     Read More
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                  </a>
+                  </span>
                 </div>
               </article>
             ))}

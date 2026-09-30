@@ -45,16 +45,15 @@ const routes = [
     {routes.map(route => {
       // All three now have a page of their own. `href` stays optional so a
       // route added later without one degrades to a plain card instead of a
-      // dead link.
-      const Card = route.href ? 'a' : 'div';
+      // dead link. The title is the link (anchor text = the route name), with
+      // after:inset-0 stretching its click area over the card.
       return (
-        <Card
-          href={route.href}
-          class:list={['block p-4 bg-gray-50 rounded-xl', route.href && 'hover:bg-gray-100 transition-colors group']}
-        >
-          <h4 class:list={['font-semibold text-gray-900 text-sm font-[family-name:var(--font-heading)]', route.href && 'group-hover:text-[var(--color-primary)]']}>{route.title}</h4>
+        <div class:list={['relative block p-4 bg-gray-50 rounded-xl', route.href && 'hover:bg-gray-100 transition-colors group']}>
+          <h4 class:list={['font-semibold text-gray-900 text-sm font-[family-name:var(--font-heading)]', route.href && 'group-hover:text-[var(--color-primary)]']}>
+            {route.href ? <a href={route.href} class="after:absolute after:inset-0">{route.title}</a> : route.title}
+          </h4>
           <p class="text-xs text-gray-500 mt-1">{route.text}</p>
-        </Card>
+        </div>
       );
     })}
   </div>

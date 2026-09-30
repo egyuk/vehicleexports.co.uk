@@ -61,13 +61,15 @@ allVehicles.forEach(v => {
         <div class="swiper-wrapper">
           {bodyTypes.map(bt => (
             <div class="swiper-slide">
-              <a href={`/shipping-cars/body/${bt.name.toLowerCase().replace(/ /g, '-')}`} class="flex flex-col items-center group text-center">
+              <!-- The title is the link (anchor text = the body type name); after:inset-0
+                   stretches its click area over the tile so the image and count still open it. -->
+              <div class="relative flex flex-col items-center group text-center">
                 <div class="w-full aspect-[3/2] mb-3 flex items-center justify-center bg-gray-100 rounded-2xl px-4 py-5">
                   <img src={bt.image} alt={bt.name} class="max-w-[80%] max-h-full object-contain group-hover:scale-105 group-hover:-translate-y-1 transition-transform duration-300" loading="lazy" />
                 </div>
-                <span class="text-sm font-semibold text-gray-800 font-[family-name:var(--font-heading)]">{bt.name}</span>
+                <span class="text-sm font-semibold text-gray-800 font-[family-name:var(--font-heading)]"><a href={`/shipping-cars/body/${bt.name.toLowerCase().replace(/ /g, '-')}`} class="after:absolute after:inset-0">{bt.name}</a></span>
                 <span class="text-xs text-gray-400 mt-0.5">{bodyCounts.get(bt.name) || 0} Car{(bodyCounts.get(bt.name) || 0) !== 1 ? 's' : ''}</span>
-              </a>
+              </div>
             </div>
           ))}
         </div>
@@ -80,14 +82,15 @@ allVehicles.forEach(v => {
         <div class="swiper-wrapper">
           {brands.map(brand => (
             <div class="swiper-slide">
-              <a href={`/shipping-cars/${brand.name.toLowerCase().replace(/ /g, '-')}`} class="flex flex-col items-center py-4 group text-center">
+              <!-- The make name is the link; after:inset-0 stretches it over the tile. -->
+              <div class="relative flex flex-col items-center py-4 group text-center">
                 <div class="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mb-3">
                   <span class="text-sm font-bold text-gray-700 group-hover:text-[var(--color-primary)] transition-colors font-[family-name:var(--font-heading)] text-center">
-                    {brand.name}
+                    <a href={`/shipping-cars/${brand.name.toLowerCase().replace(/ /g, '-')}`} class="after:absolute after:inset-0">{brand.name}</a>
                   </span>
                 </div>
                 <span class="text-xs text-gray-400 mt-1">{brand.count} Car{brand.count !== 1 ? 's' : ''}</span>
-              </a>
+              </div>
             </div>
           ))}
         </div>

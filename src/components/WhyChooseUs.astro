@@ -9,7 +9,7 @@ const benefits = [
   },
   {
     title: 'UK Tax / VAT Free Car Exports',
-    description: 'We specialise in the selection of vehicles that are eligible for VAT refunds and Tax deduction, provided that they are being exported outside of the EU. We have access to a large range of used "VAT Qualifying" and Brand New Tax-Free vehicles.',
+    description: 'We specialise in the selection of vehicles that are eligible for VAT refunds and Tax deduction, provided that they are being exported outside the UK. We have access to a large range of used "VAT Qualifying" and Brand New Tax-Free vehicles.',
     image: '/assets/images/services/vat-exports.jpeg',
   },
   {
@@ -54,16 +54,21 @@ const hrefFor = (image: string) => {
     </p>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- The title is the link, so its anchor text is the service name rather
+           than the whole card; after:inset-0 stretches its click area over the
+           card so the image and description still open the page. -->
       {benefits.map(benefit => (
-        <a href={hrefFor(benefit.image)} class="service-card block rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all group">
+        <div class="service-card relative block rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all group">
           <div class="aspect-[16/10] overflow-hidden">
             <img src={benefit.image} alt={benefit.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           </div>
           <div class="p-5">
-            <h3 class="font-bold text-[var(--color-primary)] text-lg font-[family-name:var(--font-heading)] leading-snug">{benefit.title}</h3>
+            <h3 class="font-bold text-[var(--color-primary)] text-lg font-[family-name:var(--font-heading)] leading-snug">
+              <a href={hrefFor(benefit.image)} class="after:absolute after:inset-0">{benefit.title}</a>
+            </h3>
             <p class="text-sm text-gray-600 mt-2 leading-relaxed">{benefit.description}</p>
           </div>
-        </a>
+        </div>
       ))}
     </div>
   </div>

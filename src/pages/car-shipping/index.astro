@@ -161,14 +161,16 @@ const continents = Object.entries(continentCountries).map(([name, countries]) =>
           <div>
             <h3 class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3 pb-2 border-b border-gray-100">{c.name}</h3>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {/* The name is the link (anchor text = the country name); after:inset-0
+                  stretches its click area over the card, ports included. */}
               {c.countries.map(country => (
-                <a href={country.href} class="flex items-start gap-2.5 bg-gray-50 hover:bg-orange-50/70 border border-gray-100 rounded-lg p-3 transition-colors">
+                <div class="relative flex items-start gap-2.5 bg-gray-50 hover:bg-orange-50/70 border border-gray-100 rounded-lg p-3 transition-colors">
                   <svg class="w-4 h-4 text-[var(--color-primary)] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                   <span class="text-sm text-gray-700 leading-snug">
-                    <span class="font-semibold text-gray-900">{country.name}</span>
+                    <span class="font-semibold text-gray-900"><a href={country.href} class="after:absolute after:inset-0">{country.name}</a></span>
                     {country.ports.length > 0 && <span> – {country.ports.join(', ')}</span>}
                   </span>
-                </a>
+                </div>
               ))}
             </div>
           </div>
@@ -205,7 +207,7 @@ const continents = Object.entries(continentCountries).map(([name, countries]) =>
           <h3 class="text-2xl font-bold text-gray-900 font-[family-name:var(--font-heading)] mb-5 pb-3 border-b border-gray-100">Car Shipping and Export to {region}</h3>
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {guides.map((guide) => (
-              <a href={`/car-shipping/${guide.data.slug}`} class="group bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg hover:border-[var(--color-primary)]/20 transition-all duration-300">
+              <div class="group relative bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg hover:border-[var(--color-primary)]/20 transition-all duration-300">
                 <div class="aspect-[16/9] bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden">
                   {guide.data.heroImage ? (
                     <img src={guide.data.heroImage} alt={guide.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
@@ -220,11 +222,11 @@ const continents = Object.entries(continentCountries).map(([name, countries]) =>
                 </div>
                 <div class="p-6">
                   <h4 class="text-xl font-bold text-gray-900 group-hover:text-[var(--color-primary)] transition-colors font-[family-name:var(--font-heading)]">
-                    {guide.data.title}
+                    <a href={`/car-shipping/${guide.data.slug}`} class="after:absolute after:inset-0">{guide.data.title}</a>
                   </h4>
                   <p class="text-sm text-gray-500 mt-2 line-clamp-2">{guide.data.description}</p>
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         </div>

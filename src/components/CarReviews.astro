@@ -5,7 +5,9 @@ const eyebrow = 'Car reviews';
 
 const allPosts = await getCollection('blog');
 const reviews = allPosts
-  .filter(p => !p.data.draft)
+  // Reviews only. LatestBlog shows everything else, so the two homepage
+  // sections never repeat a post.
+  .filter(p => !p.data.draft && p.data.category === 'Vehicle Reviews')
   .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
   .slice(0, 3)
   .map(post => ({
@@ -16,6 +18,7 @@ const reviews = allPosts
   }));
 ---
 
+{reviews.length > 0 && (
 <section class="pt-3 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section header -->
@@ -38,6 +41,8 @@ const reviews = allPosts
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {reviews.map(review => (
         <div class="relative rounded-3xl overflow-hidden shadow-xl group">
+          <!-- The title is the link (anchor text = the review title); after:inset-0
+               stretches its click area over the card. -->
           <!-- Image -->
           <div class="relative aspect-[16/10]">
             <img
@@ -56,20 +61,19 @@ const reviews = allPosts
               <h3
                 class="text-sm font-bold text-white font-[family-name:var(--font-heading)] leading-tight mb-1.5"
               >
-                {review.title}
+                <a href={review.link} class="after:absolute after:inset-0">{review.title}</a>
               </h3>
               <p class="text-white/80 text-xs mb-2.5 leading-relaxed line-clamp-2">
                 {review.description}
               </p>
-              <a
-                href={review.link}
-                class="inline-flex items-center gap-1 bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white px-2.5 py-1.5 rounded-md font-semibold text-xs transition-all hover:shadow-lg"
+              <span
+                class="inline-flex items-center gap-1 bg-[var(--color-primary)] group-hover:bg-[var(--color-primary-dark)] text-white px-2.5 py-1.5 rounded-md font-semibold text-xs transition-all group-hover:shadow-lg"
               >
                 Review detail
                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                   ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg
                 >
-              </a>
+              </span>
             </div>
           </div>
         </div>
@@ -77,3 +81,4 @@ const reviews = allPosts
     </div>
   </div>
 </section>
+)}
