@@ -249,3 +249,27 @@ input[type="range"]::-moz-range-thumb {
 .prose ol { list-style: decimal; padding-left: 1.5rem; margin-bottom: 1rem; }
 .prose a { color: var(--color-primary); }
 .prose a:hover { text-decoration: underline; }
+
+/* Markdown tables (Hong Kong's rates, the car review spec tables). The
+   typography plugin is not installed, so the prose-table:* modifiers some
+   pages carry do nothing and tables fell back to browser defaults: centred
+   headers, no rules. These match the rate tables on /car-shipping/shipping-rates.
+   Separate borders rather than collapsed, so the corners can be rounded
+   without overflow:hidden clipping a wide table on a phone. */
+.prose table { width: 100%; border-collapse: separate; border-spacing: 0; border: 1px solid var(--color-gray-border); border-radius: 0.75rem; margin: 1.5rem 0; font-size: 0.9375rem; line-height: 1.5; }
+.prose th, .prose td { padding: 0.75rem 1rem; text-align: left; vertical-align: top; }
+.prose thead th { background: var(--color-gray-light); color: #111827; font-family: var(--font-heading); font-weight: 600; }
+.prose thead th:first-child { border-top-left-radius: 0.75rem; }
+.prose thead th:last-child { border-top-right-radius: 0.75rem; }
+.prose tbody td { border-top: 1px solid var(--color-gray-border); color: #4b5563; }
+.prose tbody tr:nth-child(even) td { background: #fafafa; }
+.prose tbody tr:last-child td:first-child { border-bottom-left-radius: 0.75rem; }
+.prose tbody tr:last-child td:last-child { border-bottom-right-radius: 0.75rem; }
+.prose td strong { color: #111827; }
+/* On a phone a four-column spec table is wider than the screen and pushed the
+   whole page sideways. As a block it scrolls inside its own border instead.
+   Desktop keeps display:table, so narrow tables still stretch to full width. */
+@media (max-width: 767px) {
+  .prose table { display: block; overflow-x: auto; font-size: 0.875rem; }
+  .prose th, .prose td { padding: 0.625rem 0.75rem; }
+}

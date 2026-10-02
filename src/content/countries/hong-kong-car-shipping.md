@@ -20,16 +20,16 @@ keyFacts:
     value: "Right-hand drive"
 ---
 
-Vehicle shipping rates for cars going from the UK to Hong Kong.
+## Shipping rates from the UK to Hong Kong
 
-| Vehicle type | Shipping price |
-| --- | --- |
-| Saloon / Sedan cars, shared container (up to 1.6m high, 5.2m long) | £1,040 |
-| 4×4 / SUV, shared container (up to 2m high, 5.2m long) | £1,148 |
-| 20-foot Container (1 car) | £1,300 |
-| 40-foot Container (2 cars) | £1,500 |
-| Other vehicles (Van, Truck, Bus, Tractor, Trailer, etc) | POA |
-| Collection / Delivery (from any UK location) | £1 per mile to nearest UK port (each way) |
+| Service | Vehicle | Price |
+| --- | --- | --- |
+| Shared container | Saloon / sedan, up to 1.6m high and 5.2m long | **£1,040** |
+| Shared container | 4×4 / SUV, up to 2m high and 5.2m long | **£1,148** |
+| 20ft private container | One car | **£1,300** |
+| 40ft container | Two cars | **£1,500** |
+| Other vehicles | Van, truck, bus, tractor, trailer and similar | **POA** |
+| UK collection or delivery | From any UK address, each way | **£1 per mile** to the nearest UK port |
 
 **Shared containers depart from Grays, Essex.** Prices are per vehicle, from delivery to the Grays depot to arrival
 in Hong Kong. Space is confirmed at booking, and the shipping lines can add surcharges at short notice. Electric
