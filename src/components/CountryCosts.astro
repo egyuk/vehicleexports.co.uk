@@ -29,6 +29,9 @@
 // The included/excluded lists are deliberately NOT configurable — they are the
 // same commercial terms on every route, and the last excluded item ("All
 // destination country's import fees") is what keeps these pages UK-side.
+// Hong Kong's page is markdown and does not use this component, so it carries
+// its own copy of both lists (src/content/countries/hong-kong-car-shipping.md).
+// Change them there too.
 import { shippingRates } from '../data/shipping-prices';
 import { approximateRatesFor } from '../data/shipping-rates';
 import { sharedContainerRates } from '../data/shared-container-rates';

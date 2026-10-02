@@ -22,6 +22,9 @@ keyFacts:
 
 ## Shipping rates from the UK to Hong Kong
 
+The total cost of shipping depends on the vehicle make, model and most importantly size. We work directly
+with all shipping lines in the UK to arrange regular and reliable vehicle exports from the UK to Hong Kong.
+
 | Service | Vehicle | Price |
 | --- | --- | --- |
 | Shared container | Saloon / sedan, up to 1.6m high and 5.2m long | **£1,040** |
@@ -34,6 +37,23 @@ keyFacts:
 **Shared containers depart from Grays, Essex.** Prices are per vehicle, from delivery to the Grays depot to arrival
 in Hong Kong. Space is confirmed at booking, and the shipping lines can add surcharges at short notice. Electric
 and hybrid vehicles are quoted case by case.
+
+### What is included in our price above?
+
+- Loading and lashing vehicle into ship
+- UK customs export and clearance
+- UK port handling charges
+- DVLA documentation and export certification
+- Export documentation (e.g Bill of Lading)
+- Posting of the Export Documents from UK by UPS/DHL
+- Shipping of the vehicle from the UK to Destination Port
+
+### Our price above excludes
+
+- Pre-Export Inspection (if required)
+- Marine Insurance (container only)
+- Collection and/or delivery of the vehicle
+- All destination country's import fees
 
 ## Weekly car shipping direct from the UK to Hong Kong
 
