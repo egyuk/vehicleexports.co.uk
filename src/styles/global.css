@@ -243,12 +243,40 @@ input[type="range"]::-moz-range-thumb {
 }
 
 /* Prose overrides for blog content */
-.prose h2 { margin-top: 2rem; margin-bottom: 1rem; }
+/* Headings. Without the typography plugin the prose-h2:/prose-headings:
+   modifiers do nothing, and markdown headings rendered at body size. These
+   match the hand-built sections on the country pages (CountryCosts: h2
+   text-2xl lg:text-3xl, h3 text-lg). The first element loses its top margin
+   because it already sits under the section's padding. */
+.prose h2 { font-size: 1.5rem; line-height: 2rem; color: #111827; margin-top: 2.5rem; margin-bottom: 1rem; }
+.prose h3 { font-size: 1.125rem; line-height: 1.75rem; color: #111827; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+.prose > :first-child { margin-top: 0; }
+@media (min-width: 1024px) {
+  .prose h2 { font-size: 1.875rem; line-height: 2.25rem; }
+}
+/* Car reviews put their prose in a card under an 18px title, so headings
+   there stay at body size rather than outranking the card. */
+.prose-sm h2, .prose-sm h3 { font-size: 1rem; line-height: 1.5rem; }
+.prose-sm h2 { margin-top: 1.5rem; }
 .prose p { margin-bottom: 1rem; }
 .prose ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
 .prose ol { list-style: decimal; padding-left: 1.5rem; margin-bottom: 1rem; }
 .prose a { color: var(--color-primary); }
 .prose a:hover { text-decoration: underline; }
+
+/* Hong Kong's "What is included in our price above?" / "Our price above
+   excludes" lists, drawn with the tick and cross CountryCosts uses on every
+   other country page. The page is markdown edited through Decap, so the lists
+   stay plain markdown and are found by their heading ids; rename a heading
+   and that list falls back to ordinary bullets. */
+:is(#what-is-included-in-our-price-above, #our-price-above-excludes) + ul { list-style: none; padding-left: 0; display: grid; gap: 0.75rem 1.5rem; margin-bottom: 1.5rem; }
+:is(#what-is-included-in-our-price-above, #our-price-above-excludes) + ul > li { display: flex; align-items: flex-start; gap: 0.75rem; color: #4b5563; }
+:is(#what-is-included-in-our-price-above, #our-price-above-excludes) + ul > li::before { content: ""; width: 1.25rem; height: 1.25rem; margin-top: 0.125rem; flex-shrink: 0; -webkit-mask: var(--list-icon) center / contain no-repeat; mask: var(--list-icon) center / contain no-repeat; }
+#what-is-included-in-our-price-above + ul > li::before { background: var(--color-primary); --list-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 13l4 4L19 7'/%3E%3C/svg%3E"); }
+#our-price-above-excludes + ul > li::before { background: #9ca3af; --list-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 18L18 6M6 6l12 12'/%3E%3C/svg%3E"); }
+@media (min-width: 640px) {
+  :is(#what-is-included-in-our-price-above, #our-price-above-excludes) + ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 
 /* Markdown tables (Hong Kong's rates, the car review spec tables). The
    typography plugin is not installed, so the prose-table:* modifiers some
